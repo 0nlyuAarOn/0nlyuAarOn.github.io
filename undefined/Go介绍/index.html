@@ -226,6 +226,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               ABOUT
@@ -240,17 +251,6 @@
             <a href="/categories/">
               
               CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -383,7 +383,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">756</span> In Total
+              Words <span class="post-count">760</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -445,26 +445,39 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="一、-Go简介"><a href="#一、-Go简介" class="headerlink" title="一、 Go简介"></a>一、 Go简介</h1><h2 id="1-GO简介"><a href="#1-GO简介" class="headerlink" title="1. GO简介"></a>1. GO简介</h2><ul>
-<li>Go主要目标”兼具 <a target="_blank" rel="noopener" href="http://m.biancheng.net/python/">Python</a> 等动态语言的开发速度和 C/<a target="_blank" rel="noopener" href="http://m.biancheng.net/cplus/">C++</a> 等编译型语言的性能与安全性”。</li>
-<li>Go可用于网络编程、系统编程、并发编程、分布式编程，是编译型语言。</li>
-<li>Go语言有时候被描述为“C 类似语言”，但比C好用</li>
-<li><p>Go没有类和继承的概念，过接口（interface）的概念来实现多态性。Go语言是一门混合型的语言</p>
+        <h1>一、 Go简介</h1>
+<h2 id="1-GO简介">1. GO简介</h2>
+<ul>
+<li>
+<p>Go主要目标&quot;兼具 <a target="_blank" rel="noopener" href="http://m.biancheng.net/python/">Python</a> 等动态语言的开发速度和 C/<a target="_blank" rel="noopener" href="http://m.biancheng.net/cplus/">C++</a> 等编译型语言的性能与安全性”。</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="http://m.biancheng.net/docker/">Docker</a>、Go-Ethereum、Thrraform 和 Kubernetes。也是Go开发的</p>
+<li>
+<p>Go可用于网络编程、系统编程、并发编程、分布式编程，是编译型语言。</p>
+</li>
+<li>
+<p>Go语言有时候被描述为“C 类似语言”，但比C好用</p>
+</li>
+<li>
+<p>Go没有类和继承的概念，过接口（interface）的概念来实现多态性。Go语言是一门混合型的语言</p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="http://m.biancheng.net/docker/">Docker</a>、Go-Ethereum、Thrraform 和 Kubernetes。也是Go开发的</p>
 </li>
 </ul>
-<h2 id="2-Go是编译型语言"><a href="#2-Go是编译型语言" class="headerlink" title="2. Go是编译型语言"></a>2. Go是编译型语言</h2><p>Go 使用编译器来编译代码。编译器将源代码编译成二进制（或字节码）格式；在编译代码时，编译器检查错误、优化性能并输出可在不同平台上运行的二进制文件。要创建并运行 Go 程序，程序员必须执行如下步骤。</p>
+<h2 id="2-Go是编译型语言">2. Go是编译型语言</h2>
+<p>Go 使用编译器来编译代码。编译器将源代码编译成二进制（或字节码）格式；在编译代码时，编译器检查错误、优化性能并输出可在不同平台上运行的二进制文件。要创建并运行 Go 程序，程序员必须执行如下步骤。</p>
 <ol>
-<li>​        使用文本编辑器创建 Go 程序；</li>
-<li>​        保存文件；</li>
-<li>​        编译程序；</li>
-<li>​        运行编译得到的可执行文件。</li>
+<li>​		使用文本编辑器创建 Go 程序；</li>
+<li>​		保存文件；</li>
+<li>​		编译程序；</li>
+<li>​		运行编译得到的可执行文件。</li>
 </ol>
-<p> 这不同于 Python、Ruby 和 JavaScript 等语言，它们不包含编译步骤。Go 自带了编译器，因此无须单独安装编译器。</p>
+<p>这不同于 Python、Ruby 和 JavaScript 等语言，它们不包含编译步骤。Go 自带了编译器，因此无须单独安装编译器。</p>
 <hr>
 <p>常应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言</p>
-<h1 id="二、go-基本语法"><a href="#二、go-基本语法" class="headerlink" title="二、go 基本语法"></a>二、go 基本语法</h1><h2 id="1-Hello-world"><a href="#1-Hello-world" class="headerlink" title="1.  Hello world"></a>1.  Hello world</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">//Go程序是由包——package构成的，该行意思：当前HelloWorld.go文件属于main包。</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span>   <span class="comment">//导入名为fmt的包</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;    <span class="comment">//使用关键字func声明一个函数，main函数作用：程序的入口。</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)  <span class="comment">//函数内容放在函数的&#123;&#125;中，该调用fmt包中的打印方法。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>二、go 基本语法</h1>
+<h2 id="1-Hello-world">1.  Hello world</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">//Go程序是由包——package构成的，该行意思：当前HelloWorld.go文件属于main包。</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span>   <span class="comment">//导入名为fmt的包</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;    <span class="comment">//使用关键字func声明一个函数，main函数作用：程序的入口。</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)  <span class="comment">//函数内容放在函数的&#123;&#125;中，该调用fmt包中的打印方法。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>包的声明形式：<code>package &lt;包名&gt;</code></li>
 <li>导入包写法：</li>
@@ -480,9 +493,12 @@
 <blockquote>
 <p>Go语言中不需要分号<code>;</code>结束语句。</p>
 </blockquote>
-<h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h2><h3 id="2-1-命令规范"><a href="#2-1-命令规范" class="headerlink" title="2.1 命令规范"></a>2.1 命令规范</h3><p>Go语言要求标识符以一个字母或下划线开头，后面可以跟任意数量的字母、数字、下划线。不能使用关键字作为标识符</p>
+<h2 id="2-变量">2. 变量</h2>
+<h3 id="2-1-命令规范">2.1 命令规范</h3>
+<p>Go语言要求标识符以一个字母或下划线开头，后面可以跟任意数量的字母、数字、下划线。不能使用关键字作为标识符</p>
 <p>区分大小写，变量<code>num</code>和变量<code>Num</code>是两个变量。</p>
-<h3 id="2-2-声明"><a href="#2-2-声明" class="headerlink" title="2.2 声明"></a>2.2 声明</h3><p>声明一个ini类型的变量eb：</p>
+<h3 id="2-2-声明">2.2 声明</h3>
+<p>声明一个ini类型的变量eb：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  a <span class="keyword">int</span> 	</span><br></pre></td></tr></table></figure>
 <p>声明方式：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var 变量名称 变量类型 = 值</span></span><br><span class="line"><span class="keyword">var</span> num <span class="keyword">int</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
@@ -493,7 +509,8 @@
 <hr>
 <p>例子：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mainimport <span class="string">&quot;fmt&quot;</span><span class="keyword">var</span> i <span class="keyword">bool</span><span class="comment">//类型在后func main() &#123;    var a, b, c int//多个    fmt.Println(i, a, b, c)&#125;false 0 0 0  //输出结果</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://studygolang.com/articles/30013">https://studygolang.com/articles/30013</a></p>
+<h1>参考</h1>
+<p><a target="_blank" rel="noopener" href="https://studygolang.com/articles/30013">https://studygolang.com/articles/30013</a></p>
 <p><a target="_blank" rel="noopener" href="https://studygolang.com/articles/13958">https://studygolang.com/articles/13958</a></p>
 <p><a target="_blank" rel="noopener" href="https://books.studygolang.com/gopl-zh/ch0/ch0-03.html">https://books.studygolang.com/gopl-zh/ch0/ch0-03.html</a></p>
 
@@ -637,7 +654,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81-Go%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、 Go简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-GO%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. GO简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Go%E6%98%AF%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Go是编译型语言</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81go-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、go 基本语法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Hello-world"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1.  Hello world</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E5%8F%98%E9%87%8F"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2. 变量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E5%91%BD%E4%BB%A4%E8%A7%84%E8%8C%83"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">2.1 命令规范</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">2.2 声明</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%82%E8%80%83"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">参考</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、 Go简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-GO%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. GO简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Go%E6%98%AF%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Go是编译型语言</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、go 基本语法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Hello-world"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1.  Hello world</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E5%8F%98%E9%87%8F"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2. 变量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E5%91%BD%E4%BB%A4%E8%A7%84%E8%8C%83"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">2.1 命令规范</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">2.2 声明</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">参考</span></a></li></ol>
         
         </div>
       </aside>

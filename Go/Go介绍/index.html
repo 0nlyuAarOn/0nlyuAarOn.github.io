@@ -237,9 +237,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              ARCHIVES
+              TAGS
               
               
             </a>
@@ -248,9 +248,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/archive/">
               
-              TAGS
+              ARCHIVES
               
               
             </a>
@@ -383,7 +383,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">760</span> In Total
+              Words <span class="post-count">759</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -477,15 +477,15 @@
 <p>常应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言</p>
 <h1>二、go 基本语法</h1>
 <h2 id="1-Hello-world">1.  Hello world</h2>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">//Go程序是由包——package构成的，该行意思：当前HelloWorld.go文件属于main包。</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span>   <span class="comment">//导入名为fmt的包</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;    <span class="comment">//使用关键字func声明一个函数，main函数作用：程序的入口。</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)  <span class="comment">//函数内容放在函数的&#123;&#125;中，该调用fmt包中的打印方法。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main  <span class="comment">//Go程序是由包——package构成的，该行意思：当前HelloWorld.go文件属于main包。</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span>   <span class="comment">//导入名为fmt的包</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;    <span class="comment">//使用关键字func声明一个函数，main函数作用：程序的入口。</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)  <span class="comment">//函数内容放在函数的&#123;&#125;中，该调用fmt包中的打印方法。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>包的声明形式：<code>package &lt;包名&gt;</code></li>
 <li>导入包写法：</li>
 </ul>
 <p>导入多个包</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;math&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;math&quot;</span></span><br></pre></td></tr></table></figure>
 <p>使用分组形式同时导入多个包</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math/rand&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math/rand&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Golang语言调用函数方法和Java、python一样使用小数点：<code>&lt;包名&gt;.&lt;函数名&gt;</code></li>
 </ul>
@@ -499,16 +499,16 @@
 <p>区分大小写，变量<code>num</code>和变量<code>Num</code>是两个变量。</p>
 <h3 id="2-2-声明">2.2 声明</h3>
 <p>声明一个ini类型的变量eb：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  a <span class="keyword">int</span> 	</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span>  a <span class="keyword">int</span> 	</span><br></pre></td></tr></table></figure>
 <p>声明方式：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var 变量名称 变量类型 = 值</span></span><br><span class="line"><span class="keyword">var</span> num <span class="keyword">int</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// var 变量名称 变量类型 = 值</span></span><br><span class="line"><span class="keyword">var</span> num <span class="keyword">int</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>平行赋值</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1,num2 <span class="keyword">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num1,num2 <span class="keyword">int</span> = <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>使用分组同时声明多个类型不同的变量：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    &lt;变量名<span class="number">1</span>&gt; &lt;变量类型<span class="number">1</span>&gt;</span><br><span class="line">    &lt;变量名<span class="number">2</span>&gt; &lt;变量类型<span class="number">2</span>&gt;</span><br><span class="line">    &lt;变量名<span class="number">3</span>&gt; &lt;变量类型<span class="number">3</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    &lt;变量名<span class="number">1</span>&gt; &lt;变量类型<span class="number">1</span>&gt;</span><br><span class="line">    &lt;变量名<span class="number">2</span>&gt; &lt;变量类型<span class="number">2</span>&gt;</span><br><span class="line">    &lt;变量名<span class="number">3</span>&gt; &lt;变量类型<span class="number">3</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <hr>
 <p>例子：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mainimport <span class="string">&quot;fmt&quot;</span><span class="keyword">var</span> i <span class="keyword">bool</span><span class="comment">//类型在后func main() &#123;    var a, b, c int//多个    fmt.Println(i, a, b, c)&#125;false 0 0 0  //输出结果</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> mainimport <span class="string">&quot;fmt&quot;</span><span class="keyword">var</span> i <span class="keyword">bool</span><span class="comment">//类型在后func main() &#123;    var a, b, c int//多个    fmt.Println(i, a, b, c)&#125;false 0 0 0  //输出结果</span></span><br></pre></td></tr></table></figure>
 <h1>参考</h1>
 <p><a target="_blank" rel="noopener" href="https://studygolang.com/articles/30013">https://studygolang.com/articles/30013</a></p>
 <p><a target="_blank" rel="noopener" href="https://studygolang.com/articles/13958">https://studygolang.com/articles/13958</a></p>

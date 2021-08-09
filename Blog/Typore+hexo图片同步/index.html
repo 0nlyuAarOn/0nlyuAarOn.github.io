@@ -383,7 +383,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">252</span> In Total
+              Words <span class="post-count">254</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -445,16 +445,22 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="记"><a href="#记" class="headerlink" title="记"></a>记</h1><p>采用markdown进行编辑同步hexo时，图片显示是需要重点关注的地方，使用typora时，图片可以选择本地保存显示，而且typora也很轻便。</p>
-<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>所有图片博客均保存在source/_post下</p>
-<h2 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h2><p>配置博客文件的所有图片存储到博客当前路径的同名文件夹中。</p>
-<h3 id="1-修改根目录的-config-yml文件"><a href="#1-修改根目录的-config-yml文件" class="headerlink" title="1. 修改根目录的_config.yml文件"></a>1. 修改根目录的_config.yml文件</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-配置hexo文章模板设置"><a href="#2-配置hexo文章模板设置" class="headerlink" title="2. 配置hexo文章模板设置"></a>2. 配置hexo文章模板设置</h3><ul>
+        <h1>记</h1>
+<p>采用markdown进行编辑同步hexo时，图片显示是需要重点关注的地方，使用typora时，图片可以选择本地保存显示，而且typora也很轻便。</p>
+<h1>环境</h1>
+<p>所有图片博客均保存在source/_post下</p>
+<h2 id="hexo配置">hexo配置</h2>
+<p>配置博客文件的所有图片存储到博客当前路径的同名文件夹中。</p>
+<h3 id="1-修改根目录的-config-yml文件">1. 修改根目录的_config.yml文件</h3>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-配置hexo文章模板设置">2. 配置hexo文章模板设置</h3>
+<ul>
 <li>在项目的scaffolds-&gt;post.md文件中，增加配置</li>
 </ul>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">typora-copy-images-to:</span> &#123;&#123; <span class="string">title</span> &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p>采用此方法，每次调用 <code>hexo new filename</code> 都会自动配置存储文件路径，供typora识别。</p>
-<h2 id="typora"><a href="#typora" class="headerlink" title="typora"></a>typora</h2><p>Typora的 <code>文件 &gt; 偏好设置</code></p>
+<h2 id="typora">typora</h2>
+<p>Typora的 <code>文件 &gt; 偏好设置</code></p>
 <p><img src="Typore+hexo%E5%9B%BE%E7%89%87%E5%90%8C%E6%AD%A5/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyNjIzMzYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>同步到服务器显示是还需要设置根目录：</p>
 <p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
@@ -606,7 +612,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%AE%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">记</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">环境</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">hexo配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E4%BF%AE%E6%94%B9%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84-config-yml%E6%96%87%E4%BB%B6"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">1. 修改根目录的_config.yml文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E9%85%8D%E7%BD%AEhexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">2. 配置hexo文章模板设置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#typora"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">typora</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">记</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">环境</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#hexo%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">hexo配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E4%BF%AE%E6%94%B9%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84-config-yml%E6%96%87%E4%BB%B6"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">1. 修改根目录的_config.yml文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E9%85%8D%E7%BD%AEhexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">2. 配置hexo文章模板设置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#typora"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">typora</span></a></li></ol></li></ol>
         
         </div>
       </aside>

@@ -237,6 +237,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/tags/">
               
               TAGS
@@ -251,17 +262,6 @@
             <a href="/archive/">
               
               ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
               
               
             </a>
@@ -385,7 +385,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">12.7k</span> In Total
+              Words <span class="post-count">12.8k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -538,11 +538,11 @@
 <li>禁用开发语言提供的外部实体方法：</li>
 </ol>
 <p>PHP：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">libxml_disable_entity_loader(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libxml_disable_entity_loader(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 <p>JAVA:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法一 </span></span><br><span class="line"><span class="comment">// 不允许DTDs (doctypes) ,几乎可以阻止所有的XML实体攻击 </span></span><br><span class="line">DocumentBuilderFactory dbf =DocumentBuilderFactory.newInstance();</span><br><span class="line">dbf.setExpandEntityReferences(<span class="keyword">false</span>);   </span><br><span class="line"><span class="comment">// 方式二</span></span><br><span class="line"><span class="comment">// JAXB防止xxe</span></span><br><span class="line">JAXBContext context = JAXBContext.newInstance(klass);</span><br><span class="line"></span><br><span class="line">XMLInputFactory xif = XMLInputFactory.newFactory();</span><br><span class="line">xif.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, <span class="keyword">false</span>);</span><br><span class="line">xif.setProperty(XMLInputFactory.SUPPORT_DTD, <span class="keyword">true</span>);</span><br><span class="line">XMLStreamReader xsr = xif.createXMLStreamReader(<span class="keyword">new</span> StringReader(xml)); </span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一 </span></span><br><span class="line"><span class="comment">// 不允许DTDs (doctypes) ,几乎可以阻止所有的XML实体攻击 </span></span><br><span class="line">DocumentBuilderFactory dbf =DocumentBuilderFactory.newInstance();</span><br><span class="line">dbf.setExpandEntityReferences(<span class="keyword">false</span>);   </span><br><span class="line"><span class="comment">// 方式二</span></span><br><span class="line"><span class="comment">// JAXB防止xxe</span></span><br><span class="line">JAXBContext context = JAXBContext.newInstance(klass);</span><br><span class="line"></span><br><span class="line">XMLInputFactory xif = XMLInputFactory.newFactory();</span><br><span class="line">xif.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, <span class="keyword">false</span>);</span><br><span class="line">xif.setProperty(XMLInputFactory.SUPPORT_DTD, <span class="keyword">true</span>);</span><br><span class="line">XMLStreamReader xsr = xif.createXMLStreamReader(<span class="keyword">new</span> StringReader(xml)); </span><br></pre></td></tr></table></figure>
 <p>Python：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">xmlData = etree.parse(xmlSource,etree.XMLParser(resolve_entities=<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">xmlData = etree.parse(xmlSource,etree.XMLParser(resolve_entities=<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
 <h4 id="参考文献：">参考文献：</h4>
 <ol>
 <li>
@@ -811,9 +811,9 @@
 </tbody>
 </table>
 <p>XSS工作原理:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">攻击者发现XSS漏洞——构造代码——发送给受害人——受害人打开——攻击者获取受害人的cookie——完成攻击</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">攻击者发现XSS漏洞——构造代码——发送给受害人——受害人打开——攻击者获取受害人的cookie——完成攻击</span><br></pre></td></tr></table></figure>
 <p>CSRF工作原理:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">攻击者发现CSRF漏洞——构造代码——发送给受害人——受害人打开——受害人执行代码——完成攻击</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">攻击者发现CSRF漏洞——构造代码——发送给受害人——受害人打开——受害人执行代码——完成攻击</span><br></pre></td></tr></table></figure>
 <h4 id="漏洞条件：">漏洞条件：</h4>
 <ol>
 <li>受害者必须R陆过网站（或者有权限）</li>
@@ -1187,7 +1187,7 @@ C:\Windows\my.ini  ————//MySQL配置信息</p>
 <h4 id="修复建议：-23">修复建议：</h4>
 <p>对于不需要外部加载资源的网站，crossdomain.xml中更改<code>allow-access-from</code>的<code>domain</code>属性为域名白名单。<br>
 修复大致样本参考如下（备注：示例中的<code>app10000.qzoneapp.com,app10000.imgcache.qzoneapp.com</code>请修改为自己指定的站点）：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">&lt;?<span class="type">xml</span> version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;<span class="keyword">cross</span>-<span class="keyword">domain</span>-<span class="keyword">policy</span>&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.qq.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.soso.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.paipai.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.gtimg.cn&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.pengyou.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;app10000.qzoneapp.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;app10000.imgcache.qzoneapp.com&quot;/&gt;</span><br><span class="line">&lt;/<span class="keyword">cross</span>-<span class="keyword">domain</span>-<span class="keyword">policy</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?<span class="type">xml</span> version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;<span class="keyword">cross</span>-<span class="keyword">domain</span>-<span class="keyword">policy</span>&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.qq.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.soso.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.paipai.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.gtimg.cn&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;*.pengyou.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;app10000.qzoneapp.com&quot;/&gt;</span><br><span class="line">&lt;allow-<span class="keyword">access</span>-<span class="keyword">from</span> secure=&quot;false&quot; <span class="keyword">domain</span>=&quot;app10000.imgcache.qzoneapp.com&quot;/&gt;</span><br><span class="line">&lt;/<span class="keyword">cross</span>-<span class="keyword">domain</span>-<span class="keyword">policy</span>&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="八、其他">八、其他</h2>
 <h3 id="8-1-目录遍历漏洞">8.1 目录遍历漏洞</h3>
 <h4 id="风险等级：中危-2">风险等级：中危</h4>

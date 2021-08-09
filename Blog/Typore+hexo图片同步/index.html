@@ -237,6 +237,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/tags/">
               
               TAGS
@@ -251,17 +262,6 @@
             <a href="/archive/">
               
               ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
               
               
             </a>
@@ -451,15 +451,15 @@
 <p>所有图片博客均保存在source/_post下</p>
 <h2 id="hexo配置">hexo配置</h2>
 <h3 id="0-安装插件，在hexo根目录打开Git-Bash-执行">0. 安装插件，在hexo根目录打开Git Bash,执行</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 <p>配置博客文件的所有图片存储到博客当前路径的同名文件夹中。</p>
 <h3 id="1-修改根目录的-config-yml文件">1. 修改根目录的_config.yml文件</h3>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-配置hexo文章模板设置">2. 配置hexo文章模板设置</h3>
 <ul>
 <li>在项目的scaffolds-&gt;post.md文件中，增加配置</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">typora-copy-images-to:</span> &#123;&#123; <span class="string">title</span> &#125;&#125; </span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">typora-copy-images-to:</span> &#123;&#123; <span class="string">title</span> &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p>采用此方法，每次调用 <code>hexo new filename</code> 都会自动配置存储文件路径，供typora识别。</p>
 <blockquote>
 <p>图片移植时，需讲旧文档的图片执行复制到<code>typora-copy-images-to:</code>目录下，才能显示</p>

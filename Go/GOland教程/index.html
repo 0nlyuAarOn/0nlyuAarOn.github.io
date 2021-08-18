@@ -445,26 +445,23 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>简介</h1>
-<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/go/">Goland</a> 是一款由捷克软件开发公司 <a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains</a> 专为 Go 开发的跨平台的商业 IDE。Goland 具有 Strong Code Insight、Navigation &amp; Search、Run &amp; Debug、Integration with VCSs、More than just a Go IDE 以及较强的 Extensibility，能够帮助 Gopher 轻松愉悦方便快捷地 read 和 write Go code。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/go/">Goland</a> 是一款由捷克软件开发公司 <a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains</a> 专为 Go 开发的跨平台的商业 IDE。Goland 具有 Strong Code Insight、Navigation &amp; Search、Run &amp; Debug、Integration with VCSs、More than just a Go IDE 以及较强的 Extensibility，能够帮助 Gopher 轻松愉悦方便快捷地 read 和 write Go code。</p>
 <p>JetBrains 公司出品的 IDE，在业界有着良好的口碑，比如 Clion for C/C++、IntellijI IDEA for Java、PyCharm for Python、PhpStorm for PHP、WebStorm for JavaScript  等。Goland 一经推出，受到了广大 Gopher 的喜爱，建议大家将其作为 Go 的首选 IDE。</p>
 <p>唯一令人遗憾的是 Goland 是收费产品，如果没有条件或者烦于破解，开源免费的 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VSCode</a> 也是一个不错的选择。</p>
-<h1>快速上手</h1>
-<p>第一步，创建项目。</p>
+<h1 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h1><p>第一步，创建项目。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &gt; New &gt; Project</span><br></pre></td></tr></table></figure>
 <p>第二步，配置 GOROOT，即 Go 的安装目录。这里需要提前把 <a target="_blank" rel="noopener" href="https://golang.org/dl/">Go</a> 安装好。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Go &gt; GOROOT</span><br></pre></td></tr></table></figure>
-<p>第三步，配置 GOPATH，即 Go 源码、依赖包与编译后的可执行文件存放的位置。GOPATH 可以设置多个。</p>
+<p> 第三步，配置 GOPATH，即 Go 源码、依赖包与编译后的可执行文件存放的位置。GOPATH 可以设置多个。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Go &gt; GOPATH</span><br></pre></td></tr></table></figure>
-<p>GOPATH 下的 src 目录就是接下来开发程序的主要目录，所有的源码都应该放在这个目录下面，那么一般我们的做法就是一个目录一个项目。</p>
+<p> GOPATH 下的 src 目录就是接下来开发程序的主要目录，所有的源码都应该放在这个目录下面，那么一般我们的做法就是一个目录一个项目。</p>
 <p>第四步，创建 helloworld 程序。</p>
 <p><img src="/Go/GOland%E6%95%99%E7%A8%8B/image-20210418193921014.png" alt="image-20210418193921014"></p>
-<p>第五步，编译运行 helloworld。</p>
+<p> 第五步，编译运行 helloworld。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">右键 helloworld &gt; Run &gt; go build helloworld</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
+<p>输出结果如下： </p>
 <p><img src="/Go/GOland%E6%95%99%E7%A8%8B/image-20210418193934015.png" alt="image-20210418193934015"></p>
-<h1>常见设置</h1>
-<ul>
+<h1 id="常见设置"><a href="#常见设置" class="headerlink" title="常见设置"></a>常见设置</h1><ul>
 <li>变更主题</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Editor &gt; Color Scheme</span><br></pre></td></tr></table></figure>
@@ -480,8 +477,7 @@
 <li>修改 Tab 改为指定数量的空格，默认为 4 个空格</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Editor &gt; Code Style &gt; Go</span><br></pre></td></tr></table></figure>
-<h1>常用快捷键</h1>
-<ul>
+<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><ul>
 <li>文件相关</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTRL + E：打开最近浏览过的文件CTRL + SHIFT + E：打开最近修改的文件CTRL + SHIFT + N：查找文件</span><br></pre></td></tr></table></figure>
@@ -494,9 +490,8 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTRL + ALT+T：把代码包在一个代码块中，例如 <span class="keyword">if</span>&#123;…&#125; <span class="keyword">else</span>&#123;...&#125;CTRL + <span class="regexp">/：单行注释CTRL + SHIFT + /</span>：多行注释CTRL + +：折叠代码块、结构体或函数CTRL + -：展开代码块、结构体或函数SHIFT + ENTER：向下插入新行CTRL + Backspace：按单词进行删除CTRL + D：复制当前光标所在行CTRL + X：剪切当前光标所在行ALT + SHIFT + UP/DOWN：可以将光标所在行的代码上下移动CTRL + SHIFT + U：可以将选中内容进行大小写转化</span><br></pre></td></tr></table></figure>
 <hr>
-<h1>参考文献</h1>
-<p>[1] <a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains 官网</a></p>
-<p>[2] <a target="_blank" rel="noopener" href="https://www.jetbrains.com/go/">JetBrains Goland 官网</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] <a target="_blank" rel="noopener" href="https://www.jetbrains.com/">JetBrains 官网</a> </p>
+<p>[2] <a target="_blank" rel="noopener" href="https://www.jetbrains.com/go/">JetBrains Goland 官网</a> </p>
 <p>[3] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82745568">GO语言从入门到放弃二：Goland安装与配置</a></p>
 
 
@@ -647,7 +642,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">快速上手</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">常见设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">常用快捷键</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">参考文献</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">快速上手</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">常见设置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">常用快捷键</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">参考文献</span></a></li></ol>
         
         </div>
       </aside>
@@ -1209,20 +1204,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+	</body>
 </html>

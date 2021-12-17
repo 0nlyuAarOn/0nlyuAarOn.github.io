@@ -128,10 +128,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/">
+  <link rel="canonical" href="http://yoursite-url/渗透测试/速查表/常见产品弱口令/">
   <title>
     
-      0nlyuAar0n|di.did.didi.di..
+      常见产品弱口令 - 0nlyuAar0n|di.did.didi.di..
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -327,19 +327,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/GoFar.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/PTES/v5.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/PTES/v5.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/GoFar.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/PTES/v5.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/PTES/v5.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/PTES/v5.jpg'); */
       
     }
 
@@ -361,10 +361,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>天欲雪，云满湖</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">See Far,Go Further</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#速查表" title="速查表">速查表</a>
+              
+              <a class="tag" href="/tags/#弱口令" title="弱口令">弱口令</a>
+              
+            </div>
+            <h1>常见产品弱口令</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 0nlyuAar0n on
+              2021-12-17
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">5</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -405,376 +439,1228 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1 id="1-弱口令"><a href="#1-弱口令" class="headerlink" title="1. 弱口令"></a>1. 弱口令</h1><h2 id="1-1-安全设备-amp-VPN弱口令"><a href="#1-1-安全设备-amp-VPN弱口令" class="headerlink" title="1.1. 安全设备&amp;VPN弱口令"></a>1.1. 安全设备&amp;VPN弱口令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>默认账号</th>
+<th>默认密码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深信服产品</td>
+<td>sangfor</td>
+<td>sangfor  sangfor@2018 sangfor@2019</td>
+</tr>
+<tr>
+<td>深信服科技 AD</td>
+<td></td>
+<td>delanrecover</td>
+</tr>
+<tr>
+<td>深信服负载均衡 AD 3.6</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>深信服WAC ( WNS V2.6)</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>深信服AC6.0</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>SANGFOR防火墙</td>
+<td>admin</td>
+<td>sangfor</td>
+</tr>
+<tr>
+<td>深信服AF(NGAF V2.2)</td>
+<td>admin</td>
+<td>sangfor</td>
+</tr>
+<tr>
+<td>深信服NGAF下一代应用防火墙(NGAF V4.3)</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>深信服AD3.9</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>深信服上网行为管理设备数据中心</td>
+<td>Admin</td>
+<td>密码为空</td>
+</tr>
+<tr>
+<td>SANGFOR_AD_v5.1</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>网御漏洞扫描系统</td>
+<td>leadsec</td>
+<td>leadsec</td>
+</tr>
+<tr>
+<td>天阗入侵检测与管理系统 V7.0</td>
+<td>Admin</td>
+<td>venus70</td>
+</tr>
+<tr>
+<td></td>
+<td>Audit</td>
+<td>venus70</td>
+</tr>
+<tr>
+<td></td>
+<td>adm</td>
+<td>venus70</td>
+</tr>
+<tr>
+<td>天阗入侵检测与管理系统 V6.0</td>
+<td>Admin</td>
+<td>venus60</td>
+</tr>
+<tr>
+<td></td>
+<td>Audit</td>
+<td>venus60</td>
+</tr>
+<tr>
+<td></td>
+<td>adm</td>
+<td>venus60</td>
+</tr>
+<tr>
+<td>网御WAF集中控制中心(V3.0R5.0)</td>
+<td>admin</td>
+<td>leadsec.waf</td>
+</tr>
+<tr>
+<td></td>
+<td>audit</td>
+<td>leadsec.waf</td>
+</tr>
+<tr>
+<td></td>
+<td>adm</td>
+<td>leadsec.waf</td>
+</tr>
+<tr>
+<td>联想网御</td>
+<td>administrator</td>
+<td>administrator</td>
+</tr>
+<tr>
+<td>网御事件服务器</td>
+<td>admin</td>
+<td>admin123</td>
+</tr>
+<tr>
+<td>联想网御防火墙PowerV</td>
+<td>administrator</td>
+<td>administrator</td>
+</tr>
+<tr>
+<td>联想网御入侵检测系统</td>
+<td>lenovo</td>
+<td>default</td>
+</tr>
+<tr>
+<td>联想网御防火墙</td>
+<td>admin</td>
+<td>leadsec@7766</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>administrator</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>bane@7766</td>
+</tr>
+<tr>
+<td>网络卫士入侵检测系统</td>
+<td>admin</td>
+<td>talent</td>
+</tr>
+<tr>
+<td>网御入侵检测系统V3.2.72.0</td>
+<td>adm</td>
+<td>leadsec32</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>leadsec32</td>
+</tr>
+<tr>
+<td>联想网御入侵检测系统IDS</td>
+<td>root</td>
+<td>111111</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>admin123</td>
+</tr>
+<tr>
+<td>科来网络回溯分析系统</td>
+<td>csadmin</td>
+<td>colasoft</td>
+</tr>
+<tr>
+<td>中控考勤机web3.0</td>
+<td>administrator</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>H3C iMC</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>H3C SecPath系列</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>H3C S5120-SI</td>
+<td>test</td>
+<td>123</td>
+</tr>
+<tr>
+<td>H3C智能管理中心</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>H3C ER3100</td>
+<td>admin</td>
+<td>adminer3100</td>
+</tr>
+<tr>
+<td>H3C ER3200</td>
+<td>admin</td>
+<td>adminer3200</td>
+</tr>
+<tr>
+<td>H3C ER3260</td>
+<td>admin</td>
+<td>adminer3260</td>
+</tr>
+<tr>
+<td>H3C</td>
+<td>admin</td>
+<td>adminer</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td></td>
+<td>h3c</td>
+<td>h3c</td>
+</tr>
+<tr>
+<td>H3C web网管用户登录</td>
+<td>admin</td>
+<td>h3capadmin</td>
+</tr>
+<tr>
+<td>360天擎</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>网神防火墙</td>
+<td>firewall</td>
+<td>firewall</td>
+</tr>
+<tr>
+<td>天融信防火墙NGFW4000</td>
+<td>superman</td>
+<td>talent</td>
+</tr>
+<tr>
+<td>天融信防火墙</td>
+<td>superman</td>
+<td>talent！23</td>
+</tr>
+<tr>
+<td>黑盾防火墙</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td></td>
+<td>rule</td>
+<td>abc123</td>
+</tr>
+<tr>
+<td></td>
+<td>audit</td>
+<td>abc123</td>
+</tr>
+<tr>
+<td>华为防火墙</td>
+<td>telnetuser</td>
+<td>telnetpwd</td>
+</tr>
+<tr>
+<td></td>
+<td>ftpuser</td>
+<td>ftppwd</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>Admin@123</td>
+</tr>
+<tr>
+<td></td>
+<td>eudemon</td>
+<td>eudemon</td>
+</tr>
+<tr>
+<td>方正防火墙</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>飞塔防火墙</td>
+<td>admin</td>
+<td>密码为空</td>
+</tr>
+<tr>
+<td>Juniper_SSG__5防火墙</td>
+<td>netscreen</td>
+<td>netscreen</td>
+</tr>
+<tr>
+<td>中新金盾硬件防火墙</td>
+<td>admin</td>
+<td>123</td>
+</tr>
+<tr>
+<td>kill防火墙(冠群金辰)</td>
+<td>admin</td>
+<td>sys123</td>
+</tr>
+<tr>
+<td>天清汉马USG防火墙</td>
+<td>admin</td>
+<td>venus.fw</td>
+</tr>
+<tr>
+<td></td>
+<td>Audit</td>
+<td>venus.audit</td>
+</tr>
+<tr>
+<td></td>
+<td>useradmin</td>
+<td>venus.user</td>
+</tr>
+<tr>
+<td>阿姆瑞特防火墙</td>
+<td>admin</td>
+<td>manager</td>
+</tr>
+<tr>
+<td>山石网科</td>
+<td>hillstone</td>
+<td>hillstone</td>
+</tr>
+<tr>
+<td>绿盟安全审计系统</td>
+<td>weboper</td>
+<td>weboper</td>
+</tr>
+<tr>
+<td></td>
+<td>webaudit</td>
+<td>webaudit</td>
+</tr>
+<tr>
+<td></td>
+<td>conadmin</td>
+<td>conadmin</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td></td>
+<td>shell</td>
+<td>shell</td>
+</tr>
+<tr>
+<td>绿盟产品</td>
+<td></td>
+<td>nsfocus123</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>nsfocus</td>
+</tr>
+<tr>
+<td></td>
+<td>reporter</td>
+<td>nsfocus</td>
+</tr>
+<tr>
+<td></td>
+<td>auditor</td>
+<td>nsfocus</td>
+</tr>
+<tr>
+<td>TopAudit日志审计系统</td>
+<td>superman</td>
+<td>talent</td>
+</tr>
+<tr>
+<td>LogBase日志管理综合审计系统</td>
+<td>admin</td>
+<td>safetybase</td>
+</tr>
+<tr>
+<td>网神SecFox运维安全管理与审计系统</td>
+<td>admin</td>
+<td>!1fw@2soc#3vpn</td>
+</tr>
+<tr>
+<td>网神SecADS 3600</td>
+<td>useradmin</td>
+<td>useradmin</td>
+</tr>
+<tr>
+<td>网神防火墙GE1口</td>
+<td>admin</td>
+<td>firewall</td>
+</tr>
+<tr>
+<td>天融信数据库审计系统</td>
+<td>superman</td>
+<td>telent</td>
+</tr>
+<tr>
+<td>Hillstone安全审计平台</td>
+<td>hillstone</td>
+<td>hillstone</td>
+</tr>
+<tr>
+<td>网康日志中心</td>
+<td>ns25000</td>
+<td>ns25000</td>
+</tr>
+<tr>
+<td>网络安全审计系统（中科新业）</td>
+<td>admin</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>天玥网络安全审计系统</td>
+<td>Admin</td>
+<td>cyberaudit</td>
+</tr>
+<tr>
+<td>明御WEB应用防火墙</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>adminadmin</td>
+</tr>
+<tr>
+<td>明御攻防实验室平台</td>
+<td>root</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>明御安全网关</td>
+<td>admin</td>
+<td>adminadmin</td>
+</tr>
+<tr>
+<td>明御运维审计与册风险控制系统</td>
+<td>admin</td>
+<td>1q2w3e</td>
+</tr>
+<tr>
+<td></td>
+<td>system</td>
+<td>1q2w3e4r</td>
+</tr>
+<tr>
+<td></td>
+<td>auditor</td>
+<td>1q2w3e4r</td>
+</tr>
+<tr>
+<td></td>
+<td>operator</td>
+<td>1q2w3e4r</td>
+</tr>
+<tr>
+<td>明御网站卫士</td>
+<td>sysmanager</td>
+<td>sysmanager888</td>
+</tr>
+<tr>
+<td>明御APT</td>
+<td>admin</td>
+<td>Dbapp@2014</td>
+</tr>
+<tr>
+<td>亿邮邮件网关</td>
+<td>eyouuser</td>
+<td>eyou_admin</td>
+</tr>
+<tr>
+<td></td>
+<td>eyougw</td>
+<td>admin@(eyou)</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>+-ccccc</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>cyouadmin</td>
+</tr>
+<tr>
+<td>Websense邮件安全网关</td>
+<td>administrator</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>梭子鱼邮件存储网关</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>天清web应用安全网关</td>
+<td>admin</td>
+<td>venus70</td>
+</tr>
+<tr>
+<td>天境扫描器</td>
+<td>admin</td>
+<td>venustech60</td>
+</tr>
+<tr>
+<td>天清入侵防御系统</td>
+<td>admin</td>
+<td>venus.nips</td>
+</tr>
+<tr>
+<td>辰泰和信息安全运营中心</td>
+<td>sysadmin/系统管理员</td>
+<td>venus.sysadmin</td>
+</tr>
+<tr>
+<td></td>
+<td>useradmin/用户管理员</td>
+<td>venus.useradmin</td>
+</tr>
+<tr>
+<td></td>
+<td>auditor/审计管理员</td>
+<td>venus.auditor</td>
+</tr>
+<tr>
+<td>启明星辰</td>
+<td>admin</td>
+<td>bane@7766</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>admin@123</td>
+</tr>
+<tr>
+<td>juniper</td>
+<td>netscreen</td>
+<td>netscreen</td>
+</tr>
+<tr>
+<td>Cisco</td>
+<td>admin</td>
+<td>cisco</td>
+</tr>
+<tr>
+<td>迪普</td>
+<td>admin</td>
+<td>admin_default</td>
+</tr>
+<tr>
+<td>齐治堡垒机</td>
+<td>shterm</td>
+<td>shterm</td>
+</tr>
+<tr>
+<td>维盟路由器</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td></td>
+<td>root</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>铱讯 Yxlink WAF</td>
+<td>sysadmin</td>
+<td>sysadmin</td>
+</tr>
+<tr>
+<td>IBM IMM 集成管理模块</td>
+<td>USERID</td>
+<td>PASSW0RD</td>
+</tr>
+<tr>
+<td>大华监控设备</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>锐捷NBR系列</td>
+<td>manager</td>
+<td>manager</td>
+</tr>
+<tr>
+<td>华夏创新AppEx、Lotware、LotWan、LotFlow、LotAccess、LotBalance、LotMobile以及华创路由器</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>深信服VPN</td>
+<td>Admin</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>深信服ipsec-VPN (SSL 5.5)</td>
+<td>Admin</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>天融信VPN</td>
+<td>test</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>华为VPN</td>
+<td>root</td>
+<td>mduadmin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="1-2-路由器弱口令"><a href="#1-2-路由器弱口令" class="headerlink" title="1.2. 路由器弱口令"></a>1.2. 路由器弱口令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>默认账号</th>
+<th>默认密码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全向QL1680</td>
+<td>admin</td>
+<td>qxcommsupport</td>
+</tr>
+<tr>
+<td></td>
+<td>qxcomm1680</td>
+<td>qxcomm1680</td>
+</tr>
+<tr>
+<td>全向QL1880</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>全向QL1688</td>
+<td>admin</td>
+<td>qxcomm1688</td>
+</tr>
+<tr>
+<td></td>
+<td>高端设置密码：</td>
+<td>qxcommsuport</td>
+</tr>
+<tr>
+<td>TP-LINKTD-8800</td>
+<td>admin</td>
+<td>admin.</td>
+</tr>
+<tr>
+<td>合勤zyxel642</td>
+<td>telnet</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>EcomED-802EG</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>神州数码6010RA</td>
+<td>ADSL</td>
+<td>ADSL1234</td>
+</tr>
+<tr>
+<td>华为SmartAXMT800</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>伊泰克</td>
+<td>supervisor</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>华硕</td>
+<td>adsl</td>
+<td>adsl1234</td>
+</tr>
+<tr>
+<td>同维DSL699E</td>
+<td>ROOT</td>
+<td>ROOT</td>
+</tr>
+<tr>
+<td>大亚DB102</td>
+<td>admin</td>
+<td>dare</td>
+</tr>
+<tr>
+<td>WST的RT1080</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>WST的ART18C</td>
+<td>admin</td>
+<td>conexant</td>
+</tr>
+<tr>
+<td>实达ADSL2110-EH</td>
+<td>admin</td>
+<td>starnetadsl</td>
+</tr>
+<tr>
+<td>泛德用户</td>
+<td>admin</td>
+<td>conexant</td>
+</tr>
+<tr>
+<td>东信Ea700</td>
+<td>空</td>
+<td>password</td>
+</tr>
+<tr>
+<td>broadmax的hsa300a</td>
+<td>broadmax</td>
+<td>broadmax</td>
+</tr>
+<tr>
+<td>长虹ch-500E</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>重庆普天CPADSL03</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>台湾突破EA110RS232:38400</td>
+<td>SL</td>
+<td>SL</td>
+</tr>
+<tr>
+<td>etek-td的ADSL_T07L006.0</td>
+<td>supervisor</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>GVC的DSL-802E/R3A</td>
+<td>admin</td>
+<td>epicrouter</td>
+</tr>
+<tr>
+<td>科迈易通km300A-1</td>
+<td></td>
+<td>password</td>
+</tr>
+<tr>
+<td>科迈易通km300A-G</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>易通km300A-A</td>
+<td>rootoradmin</td>
+<td>123456</td>
+</tr>
+<tr>
+<td>sunrise的SR-DSL-AE</td>
+<td>admin</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>sunrise的DSL-802E_R3A</td>
+<td>admin</td>
+<td>epicrouter</td>
+</tr>
+<tr>
+<td>UTStar的ut-300</td>
+<td>admin</td>
+<td>utstar</td>
+</tr>
+<tr>
+<td>湖北邮通</td>
+<td>admin</td>
+<td>epicrouter</td>
+</tr>
+<tr>
+<td>亨威NSM500网速通</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>艾玛701g</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>艾玛701H</td>
+<td>admin</td>
+<td>epicrouter</td>
+</tr>
+<tr>
+<td>实达2110EHROUTER</td>
+<td>user</td>
+<td>password</td>
+</tr>
+<tr>
+<td>神州数码/华硕</td>
+<td>adsl</td>
+<td>adsl1234</td>
+</tr>
+<tr>
+<td>全向</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td>普天</td>
+<td>admin</td>
+<td>dare</td>
+</tr>
+<tr>
+<td>zyxel</td>
+<td>anonymous</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>e-tek</td>
+<td>admin</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>北电</td>
+<td>anonymous</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>大恒</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>大唐</td>
+<td>admin</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>斯威特</td>
+<td>root</td>
+<td>root</td>
+</tr>
+<tr>
+<td></td>
+<td>user</td>
+<td>user</td>
+</tr>
+<tr>
+<td>中兴</td>
+<td>adsl</td>
+<td>adsl831</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="1-3-中间件弱口令"><a href="#1-3-中间件弱口令" class="headerlink" title="1.3. 中间件弱口令"></a>1.3. 中间件弱口令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>默认账号</th>
+<th>默认密码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tomcat</td>
+<td>tomcat</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>weblogic</td>
+<td>weblogic</td>
+<td>weblogic</td>
+</tr>
+<tr>
+<td></td>
+<td>system</td>
+<td>system</td>
+</tr>
+<tr>
+<td></td>
+<td>portaladmin</td>
+<td>portaladmin</td>
+</tr>
+<tr>
+<td></td>
+<td>guest</td>
+<td>guest</td>
+</tr>
+<tr>
+<td></td>
+<td>weblogic</td>
+<td>admin123</td>
+</tr>
+<tr>
+<td></td>
+<td>weblogic</td>
+<td>weblogic123</td>
+</tr>
+<tr>
+<td>Jboss</td>
+<td>jboss</td>
+<td>jboss</td>
+</tr>
+<tr>
+<td></td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>jonas</td>
+<td>jadmin</td>
+<td>jonas</td>
+</tr>
+<tr>
+<td></td>
+<td>tomcat</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td></td>
+<td>jonas</td>
+<td>jonas</td>
+</tr>
+<tr>
+<td>Nacos</td>
+<td>nacos</td>
+<td>nacos</td>
+</tr>
+<tr>
+<td>ActiveMQ</td>
+<td>admin</td>
+<td>admin</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            12-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/速查表/常见产品弱口令/" style="color: #0085a1">
-              <span>
-                常见产品弱口令
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            08-18
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Tools/kali之网络助手肝墙/" style="color: #0085a1">
-              <span>
-                kali之网络助手肝墙
-                
-                -- Tools
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/" style="color: #0085a1">
-              <span>
-                【红队攻防】SQL注入利用链之基础
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/速查表/xss盲打payload及其绕过/" style="color: #0085a1">
-              <span>
-                xss盲打payload及其绕过
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Go/GOland教程/" style="color: #0085a1">
-              <span>
-                GOland教程
-                
-                -- Go
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/WEB应用漏洞简单总结/" style="color: #0085a1">
-              <span>
-                WEB应用漏洞简单总结
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Blog/Typore+hexo图片同步/" style="color: #0085a1">
-              <span>
-                Typore+hexo图片同步
-                
-                -- Blog
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Blog/HEXO+VPS个人博客搭建/" style="color: #0085a1">
-              <span>
-                HEXO+VPS个人博客搭建
-                
-                -- Blog
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Go/Go介绍/" style="color: #0085a1">
-              <span>
-                Go介绍
-                
-                -- Go
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/Tools/kali之网络助手肝墙/" data-toggle="tooltip" data-placement="top" title="kali之网络助手肝墙">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=常见产品弱口令&body=Hi,I found this website and thought you might like it http://yoursite-url/渗透测试/速查表/常见产品弱口令/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '6daf597fa0a20b7d167d',
+      clientSecret: 'd7815897cdef77f24783de4c4023612fd330929d',
+      repo: 'https://github.com/0nlyuAarOn/BloG_gitalk.git',
+      owner: '0nlyuAar0n',
+      admin: '[&#39;0nlyu&#39;]',
+      id: 'Fri Dec 17 2021 22:57:16 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#1-%E5%BC%B1%E5%8F%A3%E4%BB%A4"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. 弱口令</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-1-%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87-amp-VPN%E5%BC%B1%E5%8F%A3%E4%BB%A4"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.1. 安全设备&amp;VPN弱口令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-2-%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%B1%E5%8F%A3%E4%BB%A4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1.2. 路由器弱口令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-3-%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%BC%B1%E5%8F%A3%E4%BB%A4"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">1.3. 中间件弱口令</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#速查表" title="速查表">速查表</a>
+            
+            <a class="tag" href="/tags/#弱口令" title="弱口令">弱口令</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Blog" title="Blog" rel="2">Blog</a>
-    
-    
-    
-    <a href="/tags/#Go" title="Go" rel="2">Go</a>
-    
-    
-    
-    <a href="/tags/#Tools" title="Tools" rel="1">Tools</a>
-    
-    
-    
-    <a href="/tags/#kali" title="kali" rel="1">kali</a>
-    
-    
-    
-    <a href="/tags/#渗透测试" title="渗透测试" rel="3">渗透测试</a>
-    
-    
-    
-    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
-    
-    
-    
-    <a href="/tags/#小日常" title="小日常" rel="1">小日常</a>
-    
-    
-    
-    <a href="/tags/#web漏洞" title="web漏洞" rel="1">web漏洞</a>
-    
-    
-    
-    <a href="/tags/#速查表" title="速查表" rel="2">速查表</a>
-    
-    
-    
-    <a href="/tags/#弱口令" title="弱口令" rel="1">弱口令</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E9%80%9F%E6%9F%A5%E8%A1%A8/%E5%B8%B8%E8%A7%81%E4%BA%A7%E5%93%81%E5%BC%B1%E5%8F%A3%E4%BB%A4/">
-      <li>常见产品弱口令</li>
-    </a>
-    
-    <a href="../Tools/kali%E4%B9%8B%E7%BD%91%E7%BB%9C%E5%8A%A9%E6%89%8B%E8%82%9D%E5%A2%99/">
-      <li>kali之网络助手肝墙</li>
-    </a>
-    
-    <a href="../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E3%80%90%E7%BA%A2%E9%98%9F%E6%94%BB%E9%98%B2%E3%80%91SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%88%A9%E7%94%A8%E9%93%BE/">
-      <li>【红队攻防】SQL注入利用链之基础</li>
-    </a>
-    
-    <a href="../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E9%80%9F%E6%9F%A5%E8%A1%A8/xss%E7%9B%B2%E6%89%93payload%E5%8F%8A%E5%85%B6%E7%BB%95%E8%BF%87/">
-      <li>xss盲打payload及其绕过</li>
-    </a>
-    
-    <a href="../Go/GOland%E6%95%99%E7%A8%8B/">
-      <li>GOland教程</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://0nlyuaar0n.top/" target="_blank">0nlyuAar0n</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="2021/12/">December 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/08/">August 2021</a><span class="archive-list-count">8</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Blog">
-      <li>Blog</li>
-    </a>
-    
-    <a href="/categories/#Go">
-      <li>Go</li>
-    </a>
-    
-    <a href="/categories/#Tools">
-      <li>Tools</li>
-    </a>
-    
-    <a href="/categories/#渗透测试">
-      <li>渗透测试</li>
-    </a>
-    
-    <a href="/categories/#速查表">
-      <li>速查表</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://0nlyuaar0n.top/" target="_blank">0nlyuAar0n</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

@@ -426,11 +426,13 @@
         
         <a href="#SQL" title="SQL" rel="1">SQL</a>
         
-        <a href="#xss" title="xss" rel="1">xss</a>
-        
         <a href="#小日常" title="小日常" rel="1">小日常</a>
         
         <a href="#web漏洞" title="web漏洞" rel="1">web漏洞</a>
+        
+        <a href="#速查表" title="速查表" rel="2">速查表</a>
+        
+        <a href="#弱口令" title="弱口令" rel="1">弱口令</a>
         
       </div>
 
@@ -550,20 +552,7 @@
         <div class="post-preview">
           <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/">
             <h2 class="post-title">
-              【红队攻防】SQL注入基础及利用链
-              
-              -- 渗透测试
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/渗透测试/xss盲打payload/">
-            <h2 class="post-title">
-              xss盲打payload
+              【红队攻防】SQL注入利用链之基础
               
               -- 渗透测试
               
@@ -586,17 +575,10 @@
         </div>
         <hr>
         
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="SQL">
-          <span class="tag-text">SQL</span>
-        </span>
-        
         <div class="post-preview">
-          <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/">
+          <a href="/渗透测试/速查表/xss盲打payload及其绕过/">
             <h2 class="post-title">
-              【红队攻防】SQL注入基础及利用链
+              xss盲打payload及其绕过
               
               -- 渗透测试
               
@@ -609,14 +591,14 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="xss">
-          <span class="tag-text">xss</span>
+        <span class="fa fa-tag listing-seperator" id="SQL">
+          <span class="tag-text">SQL</span>
         </span>
         
         <div class="post-preview">
-          <a href="/渗透测试/xss盲打payload/">
+          <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/">
             <h2 class="post-title">
-              xss盲打payload
+              【红队攻防】SQL注入利用链之基础
               
               -- 渗透测试
               
@@ -657,6 +639,59 @@
           <a href="/渗透测试/WEB应用漏洞简单总结/">
             <h2 class="post-title">
               WEB应用漏洞简单总结
+              
+              -- 渗透测试
+              
+            </h2>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="速查表">
+          <span class="tag-text">速查表</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/渗透测试/速查表/xss盲打payload及其绕过/">
+            <h2 class="post-title">
+              xss盲打payload及其绕过
+              
+              -- 渗透测试
+              
+            </h2>
+            
+          </a>
+        </div>
+        <hr>
+        
+        <div class="post-preview">
+          <a href="/渗透测试/速查表/常见产品弱口令/">
+            <h2 class="post-title">
+              常见产品弱口令
+              
+              -- 渗透测试
+              
+            </h2>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="弱口令">
+          <span class="tag-text">弱口令</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/渗透测试/速查表/常见产品弱口令/">
+            <h2 class="post-title">
+              常见产品弱口令
               
               -- 渗透测试
               
@@ -1136,5 +1171,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

@@ -422,7 +422,9 @@
         
         <a href="#Tools" title="Tools" rel="1">Tools</a>
         
-        <a href="#渗透测试" title="渗透测试" rel="3">渗透测试</a>
+        <a href="#渗透测试" title="渗透测试" rel="2">渗透测试</a>
+        
+        <a href="#速查表" title="速查表" rel="2">速查表</a>
         
       </div>
 
@@ -533,25 +535,7 @@
         <div class="post-preview">
           <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/">
             <h2 class="post-title">
-              【红队攻防】SQL注入基础及利用链
-              
-              -- 渗透测试
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/渗透测试/xss盲打payload/">
-            <h2 class="post-title">
-              xss盲打payload
+              【红队攻防】SQL注入利用链之基础
               
               -- 渗透测试
               
@@ -570,6 +554,49 @@
           <a href="/渗透测试/WEB应用漏洞简单总结/">
             <h2 class="post-title">
               WEB应用漏洞简单总结
+              
+              -- 渗透测试
+              
+            </h2>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="速查表">
+          <span class="tag-text">速查表</span>
+        </span>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/渗透测试/速查表/xss盲打payload及其绕过/">
+            <h2 class="post-title">
+              xss盲打payload及其绕过
+              
+              -- 渗透测试
+              
+            </h2>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/渗透测试/速查表/常见产品弱口令/">
+            <h2 class="post-title">
+              常见产品弱口令
               
               -- 渗透测试
               
@@ -1050,5 +1077,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

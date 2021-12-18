@@ -209,7 +209,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">天欲雪，云满湖</a>
+      <a class="navbar-brand" href="/">奈何太菜...</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -223,10 +223,12 @@
 
           
           
+          
+          
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -234,12 +236,10 @@
           
           
           
-          
-          
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              ARCHIVES
+              CATEGORIES
               
               
             </a>
@@ -259,9 +259,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              CATEGORIES
+              ABOUT
               
               
             </a>
@@ -450,7 +450,11 @@
         <blockquote>
 <p>昨夜西风凋碧树。独上高楼，望尽天涯路。</p>
 </blockquote>
-<h1 id="SQL注入基础"><a href="#SQL注入基础" class="headerlink" title="SQL注入基础"></a>SQL注入基础</h1><h2 id="1-SQL注入原理"><a href="#1-SQL注入原理" class="headerlink" title="1. SQL注入原理"></a>1. SQL注入原理</h2><h3 id="什么是sql"><a href="#什么是sql" class="headerlink" title="什么是sql"></a>什么是sql</h3><p>​    SQL是一门ANSI的标准计算机语言，用来访问和操作数据库系统。用于<code>增删改查数据库中的数据</code>。<br>​    sql可以与数据库程序协同工作，常见的数据库如：</p>
+<h1>SQL注入基础</h1>
+<h2 id="1-SQL注入原理">1. SQL注入原理</h2>
+<h3 id="什么是sql">什么是sql</h3>
+<p>​	SQL是一门ANSI的标准计算机语言，用来访问和操作数据库系统。用于<code>增删改查数据库中的数据</code>。<br>
+​	sql可以与数据库程序协同工作，常见的数据库如：</p>
 <ul>
 <li>MS Access</li>
 <li>DB2</li>
@@ -459,40 +463,48 @@
 <li>Mysql</li>
 <li>Oracle</li>
 <li>postgresql</li>
-<li>…..</li>
+<li>…</li>
 </ul>
-<p>​    虽然存在很多不同版本的SQL语言，但为了与ANSI标准相兼容，必须以相似的方式共同支持一些主要关键词（如select、update、delete、insert、where等）。</p>
-<h3 id="SQL语句常见操作方式"><a href="#SQL语句常见操作方式" class="headerlink" title="SQL语句常见操作方式"></a>SQL语句常见操作方式</h3><p><strong>select 查询数据</strong></p>
-<p>在网站应用中进行数据显示查询操作<br>例：</p>
+<p>​	虽然存在很多不同版本的SQL语言，但为了与ANSI标准相兼容，必须以相似的方式共同支持一些主要关键词（如select、update、delete、insert、where等）。</p>
+<h3 id="SQL语句常见操作方式">SQL语句常见操作方式</h3>
+<p><strong>select 查询数据</strong></p>
+<p>在网站应用中进行数据显示查询操作<br>
+例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> news <span class="keyword">where</span> id<span class="operator">=</span>$id</span><br></pre></td></tr></table></figure>
 <p><strong>insert 插入数据</strong></p>
-<p>在网站应用中进行用户注册添加等操作<br>例：</p>
+<p>在网站应用中进行用户注册添加等操作<br>
+例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> news(id,url,text) <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">&#x27;x&#x27;</span>,<span class="string">&#x27;$t&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>delete 删除数据</strong></p>
-<p>后台管理里面删除文章删除用户等操作<br>例：</p>
+<p>后台管理里面删除文章删除用户等操作<br>
+例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> news <span class="keyword">where</span> id<span class="operator">=</span>$id</span><br></pre></td></tr></table></figure>
 <p><strong>update 更新数据</strong></p>
-<p>会员或后台中心数据同步或缓存等操作<br>例：</p>
+<p>会员或后台中心数据同步或缓存等操作<br>
+例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update <span class="keyword">user</span> <span class="keyword">set</span> pwd<span class="operator">=</span><span class="string">&#x27;$p&#x27;</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">2</span> <span class="keyword">and</span> username<span class="operator">=</span><span class="string">&#x27;admin&#x27;</span></span><br></pre></td></tr></table></figure>
 <p><strong>order by 排序数据</strong></p>
-<p>一般结合表名或列名进行数据排序操作<br>例：</p>
+<p>一般结合表名或列名进行数据排序操作<br>
+例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> news <span class="keyword">order</span> <span class="keyword">by</span> $id</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>例：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> id,name,price <span class="keyword">from</span> news <span class="keyword">order</span> <span class="keyword">by</span> $<span class="keyword">order</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注: </p>
+<p>注:</p>
 <ul>
 <li>可通过以上查询方式与网站应用的关系</li>
 <li>注入点产生地方或应用猜测到对方的SQL查询方式</li>
 <li>只要存在前后台交互的地方都可能存在注入漏洞</li>
 </ul>
 </blockquote>
-<h3 id="什么是sql注入"><a href="#什么是sql注入" class="headerlink" title="什么是sql注入"></a>什么是sql注入</h3><p>​    SQL注入攻击，是由于程序对用户的操作输入未进行正确或不严格的检查过滤，用户通过操作输入修改SQL语句，<code>将用户的输入/payload以拼接的方式带入SQL语句中</code>，并被SQL引擎解析成SQL代码，再将这些语句传递给后端的数据库执行，从而引发实际执行的语句与预期执行的语句不一样，达到攻击目的的技术。</p>
-<h3 id="注入条件"><a href="#注入条件" class="headerlink" title="注入条件"></a>注入条件</h3><ol>
+<h3 id="什么是sql注入">什么是sql注入</h3>
+<p>​	SQL注入攻击，是由于程序对用户的操作输入未进行正确或不严格的检查过滤，用户通过操作输入修改SQL语句，<code>将用户的输入/payload以拼接的方式带入SQL语句中</code>，并被SQL引擎解析成SQL代码，再将这些语句传递给后端的数据库执行，从而引发实际执行的语句与预期执行的语句不一样，达到攻击目的的技术。</p>
+<h3 id="注入条件">注入条件</h3>
+<ol>
 <li><strong>参数用户可控：用户可控的前后端参数传递</strong></li>
 </ol>
 <p>如: input标签传递到后端java MyBatis处理参数可控。</p>
-<ol>
+<ol start="2">
 <li><strong>参数带入数据库操作：参数未限制输入，直接拼接入数据库操作</strong></li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$id</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;id&#x27;</span> ];</span><br><span class="line"><span class="variable">$query</span> = <span class="string">&quot;SELECT * FROM user WHERE username = &#x27;<span class="subst">$id</span>&#x27;&quot;</span>；</span><br></pre></td></tr></table></figure>
@@ -500,7 +512,8 @@
 <blockquote>
 <p>ps: 这里造成SQL注入漏洞原因有两个：一个是没有对输入的数据进行过滤(过滤输入)，还有一个是没有对发送到数据库的数据进行转义(转义输出)</p>
 </blockquote>
-<h3 id="注入点"><a href="#注入点" class="headerlink" title="注入点"></a>注入点</h3><ul>
+<h3 id="注入点">注入点</h3>
+<ul>
 <li>认证页面</li>
 <li>搜索页面</li>
 <li>Post请求</li>
@@ -510,44 +523,55 @@
 <li>边缘输入点</li>
 <li>等</li>
 </ul>
-<h3 id="危害："><a href="#危害：" class="headerlink" title="危害："></a>危害：</h3><ul>
+<h3 id="危害：">危害：</h3>
+<ul>
 <li>泄露系统中的敏感信息。</li>
 <li>数据库信息泄漏：数据库中存放的用户的隐私信息的泄露。作为数据的存储中心，数据库里往往保存着各类的隐私信息，SQL注入攻击能导致这些隐私信息透明于攻击者。</li>
 <li>网页篡改：通过操作数据库对数据内容被篡改、特定网页进行篡改。</li>
 <li>登录认证被绕过</li>
 <li>其他,例如服务器上的文件被读取或修改/服务器上的程序被执行、数据破坏、挂马攻击、服务器被控制等。</li>
 </ul>
-<h3 id="常见的修复方案"><a href="#常见的修复方案" class="headerlink" title="常见的修复方案"></a>常见的修复方案</h3><ol>
+<h3 id="常见的修复方案">常见的修复方案</h3>
+<ol>
 <li>黑/白名单过滤、关键字替换、过滤</li>
 <li>预编译、绑定变量</li>
 <li>输入输出转义</li>
 <li>参数化查询</li>
-<li>安全机制防御<ul>
+<li>安全机制防御
+<ul>
 <li>RASP</li>
 <li>WAF</li>
 <li>安全函数</li>
 </ul>
 </li>
 </ol>
-<h3 id="注入流程"><a href="#注入流程" class="headerlink" title="注入流程"></a>注入流程</h3><p>注入点检测—&gt;&gt;DBMS标识—&gt;&gt;构造相应payload—&gt;&gt;信息利用/提权/执行命令/横向移动/数据泄露/持久等</p>
-<h2 id="2-SQL注入的基本分类"><a href="#2-SQL注入的基本分类" class="headerlink" title="2. SQL注入的基本分类"></a>2. SQL注入的基本分类</h2><h3 id="参数类型分类"><a href="#参数类型分类" class="headerlink" title="参数类型分类"></a>参数类型分类</h3><p>数字型注入：输入参数为整型时，如Id、年龄和手机号等；</p>
+<h3 id="注入流程">注入流程</h3>
+<p>注入点检测–&gt;&gt;DBMS标识–&gt;&gt;构造相应payload–&gt;&gt;信息利用/提权/执行命令/横向移动/数据泄露/持久等</p>
+<h2 id="2-SQL注入的基本分类">2. SQL注入的基本分类</h2>
+<h3 id="参数类型分类">参数类型分类</h3>
+<p>数字型注入：输入参数为整型时，如Id、年龄和手机号等；</p>
 <p>字符型注入：输入参数为字符串型时，如姓名、公司、住址等；</p>
 <blockquote>
 <p>最大的区别： 字符型注入一般要使用单引号进行闭合，而数字型注入则不需要。</p>
 </blockquote>
-<h3 id="注入点分类"><a href="#注入点分类" class="headerlink" title="注入点分类"></a>注入点分类</h3><p>GET注入：注入字符在URL参数中；</p>
+<h3 id="注入点分类">注入点分类</h3>
+<p>GET注入：注入字符在URL参数中；</p>
 <p>POST注入：注入字段在POST提交的数据中；</p>
 <p>Cookie注入：注入字段在Cookie数据中，网站使用通用的防注入程序，会对GET、POST提交的数据进行过滤，却往往遗漏Cookie中的数据进行过滤。</p>
 <p>HTTP头部注入：HTTP请求的其他内容触发的SQL注入漏洞。</p>
 <p>搜索注入： 指在进行数据搜索时没过滤搜索参数，一般在链接地址、搜索框中。</p>
 <p>其他：认证页面、万能密码等。</p>
-<h3 id="结果反馈分类"><a href="#结果反馈分类" class="headerlink" title="结果反馈分类"></a>结果反馈分类</h3><h4 id="非盲注"><a href="#非盲注" class="headerlink" title="非盲注"></a><strong>非盲注</strong></h4><p>非盲注入（正常SQL注入）：执行注入SQL语句将敏感信息展示出来，并进行进一步的操作。</p>
-<h4 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a><strong>盲注</strong></h4><p>盲注是指获取的数据不能回显至前端页面，不会存在任何数据库报错内容，此时就需要利用一些方法进行判断或尝试，这个过程称之为<code>盲注</code></p>
+<h3 id="结果反馈分类">结果反馈分类</h3>
+<h4 id="非盲注"><strong>非盲注</strong></h4>
+<p>非盲注入（正常SQL注入）：执行注入SQL语句将敏感信息展示出来，并进行进一步的操作。</p>
+<h4 id="盲注"><strong>盲注</strong></h4>
+<p>盲注是指获取的数据不能回显至前端页面，不会存在任何数据库报错内容，此时就需要利用一些方法进行判断或尝试，这个过程称之为<code>盲注</code></p>
 <p>它是依据构造真或假的问题对数据库进行“提问”，注入方式主要有两种：<code>基于布尔值与基于时间</code>。</p>
 <blockquote>
 <p>盲注一般结合工具进行，纯手工难度大。</p>
 </blockquote>
-<h5 id="基于布尔值"><a href="#基于布尔值" class="headerlink" title="基于布尔值"></a>基于布尔值</h5><p>简而言之，就是根据页面回显的不同来判断。</p>
+<h5 id="基于布尔值">基于布尔值</h5>
+<p>简而言之，就是根据页面回显的不同来判断。</p>
 <p>如：</p>
 <p>MySQL中判断数据名长度的输入payload</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and length(database()) = 10 #</span></span><br></pre></td></tr></table></figure>
@@ -558,7 +582,7 @@
 <blockquote>
 <p>字符串截取：substring_index(str,delim,count)</p>
 <ul>
-<li>截取第二个 ‘.’ 之前的所有字符。 </li>
+<li>截取第二个 ‘.’ 之前的所有字符。</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.&#x27;</span>, 2);</span><br><span class="line">+------------------------------------------------+</span><br><span class="line">| substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.&#x27;</span>, 2) |</span><br><span class="line">+------------------------------------------------+</span><br><span class="line">| www.example                               |</span><br><span class="line">+------------------------------------------------+ </span><br></pre></td></tr></table></figure>
 <ul>
@@ -566,43 +590,52 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.&#x27;</span>, -2);</span><br><span class="line">+-------------------------------------------------+</span><br><span class="line">| substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.&#x27;</span>, -2) |</span><br><span class="line">+-------------------------------------------------+</span><br><span class="line">| example.com                                          |</span><br><span class="line">+-------------------------------------------------+ </span><br></pre></td></tr></table></figure>
 <ul>
-<li>如果在字符串中找不到 delim 参数指定的值，就返回整个字符串 </li>
+<li>如果在字符串中找不到 delim 参数指定的值，就返回整个字符串</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.coc&#x27;</span>, 1);</span><br><span class="line">+---------------------------------------------------+</span><br><span class="line">| substring_index(<span class="string">&#x27;www.example.com&#x27;</span>, <span class="string">&#x27;.coc&#x27;</span>, 1) |</span><br><span class="line">+---------------------------------------------------+</span><br><span class="line">| www.example.com                               |</span><br><span class="line">+---------------------------------------------------+ </span><br></pre></td></tr></table></figure>
 </blockquote>
-<h5 id="基于时间"><a href="#基于时间" class="headerlink" title="基于时间"></a>基于时间</h5><p>在某些情况下，页面回显的内容一致，需借助其他手段来SQL注入判断，如服务器执行SQL语句所需要的时间。</p>
+<h5 id="基于时间">基于时间</h5>
+<p>在某些情况下，页面回显的内容一致，需借助其他手段来SQL注入判断，如服务器执行SQL语句所需要的时间。</p>
 <p>基于时间的SQL盲注方式，通常是在SQL语句中添加延时函数，如通过<code>sleep()</code>函数，利用IF条件或ADN、OR函数的<code>短路特性和SQL执行的时间</code>来判断是否存在SQL注入。（实战于4.2介绍）</p>
 <p>常用的延时函数或指令有<code>sleep</code>、<code>repeat</code>等。</p>
-<h3 id="其他类型"><a href="#其他类型" class="headerlink" title="其他类型"></a>其他类型</h3><p><strong>延时注入：</strong> 使用延时函数方式。</p>
-<p><strong>宽字节注入：</strong>设置MySQL连接时错误配置为：<code>set character_set_client=gbk</code>，这样配置会引发编码转换从而导致的注入漏洞。</p>
-<p><strong>编码注入：</strong>将输入的字符串进行编码，如base64、urldecode、base64_decode等。</p>
-<p><strong>报错注入：</strong>由于开启错误调试信息，导致可看到语句执行后的报错信息输出，从而引发sql注入。</p>
+<h3 id="其他类型">其他类型</h3>
+<p><strong>延时注入：</strong> 使用延时函数方式。</p>
+<p>**宽字节注入：**设置MySQL连接时错误配置为：<code>set character_set_client=gbk</code>，这样配置会引发编码转换从而导致的注入漏洞。</p>
+<p>**编码注入：**将输入的字符串进行编码，如base64、urldecode、base64_decode等。</p>
+<p>**报错注入：**由于开启错误调试信息，导致可看到语句执行后的报错信息输出，从而引发sql注入。</p>
 <p><strong>DNSLOG注入：</strong> 在注入无回显时，利用MySQL数据库的 LOAD_FILE() 读取文件的函数去拼接查询结果并访问用于拼接的dns平台，然后通过平台去进行查看接收到的数据。</p>
-<p><strong>堆查询注入：</strong>同时执行多条语句。</p>
-<p><strong>联合查询注入：</strong>使用union语句合并两条或多条SQL语句。</p>
-<p><strong>多阶注入：</strong>由多个HTTP请求响应共同完成的注入。</p>
+<p>**堆查询注入：**同时执行多条语句。</p>
+<p>**联合查询注入：**使用union语句合并两条或多条SQL语句。</p>
+<p>**多阶注入：**由多个HTTP请求响应共同完成的注入。</p>
 <p><strong>二次注入：</strong>  根本问题是，开发者信任数据库中取出的数据是无害的。payload拼接进行SQL注入，在全局过滤后入库时，进行了转义，入库后，转义符会消失，这个时候出库被带入到其他SQL语句就会引入payload导致注入。</p>
-<p><strong>XFF注入：</strong>X- Forwarded-For头带入数据操作时，参数由用户可控，传递中存在SQL注入。</p>
-<p><strong>存储过程：</strong>存储过程包含参数，在参数传递中存在SQL注入。</p>
+<p>**XFF注入：**X- Forwarded-For头带入数据操作时，参数由用户可控，传递中存在SQL注入。</p>
+<p>**存储过程：**存储过程包含参数，在参数传递中存在SQL注入。</p>
 <hr>
 <p>注入技巧使用优先级：</p>
 <p>UNION注入&gt;报错注入&gt;布尔盲注&gt;时间盲注</p>
 <blockquote>
 <p>其他注入通常需要结合其他技巧使用才能获取数据</p>
 </blockquote>
-<h2 id="3-常用函数及变量"><a href="#3-常用函数及变量" class="headerlink" title="3. 常用函数及变量"></a>3. 常用函数及变量</h2><h4 id="常用的字符串-系统函数"><a href="#常用的字符串-系统函数" class="headerlink" title="常用的字符串/系统函数"></a>常用的字符串/系统函数</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="variable">@datadir</span>		#数据库路径</span><br><span class="line">@<span class="variable">@version</span>_compile_os		#操作系统版本</span><br><span class="line">DATABASE()     		#返回当前数据库名</span><br><span class="line"><span class="keyword">USER</span>()或<span class="built_in">SYSTEM_USER</span>()    		#返回当前登陆用户名</span><br><span class="line">VERSION()     		#返回数据库的版本</span><br><span class="line"></span><br><span class="line">SLEEP(n)  		#休眠n秒</span><br><span class="line">ASCII(<span class="type">char</span>)         #返回字符的ASCII码值</span><br><span class="line">ord()			#返回字符串第一个字符的ASCII值</span><br><span class="line"><span class="type">char</span>()			# 返回整数ASCIId</span><br><span class="line">mid()			#返回一个字符串的一部分</span><br><span class="line"><span class="keyword">SELECT</span> MID(<span class="string">&#x27;字符串&#x27;</span>, 起始位置, 截取长度)</span><br><span class="line">length()          #函数 返回字符串长度</span><br><span class="line">substr()          #函数 截取字符串 语法：(substr(string,<span class="keyword">start</span>,leng)</span><br><span class="line">if(ex1,ex2,ex3)            #判断语句，如果ex1正确，执行ex2，错误执行ex3</span><br><span class="line"></span><br><span class="line"><span class="keyword">left</span>() 			#返回字符串最左边的几个字符</span><br><span class="line"><span class="built_in">floor</span>()			# 返回小于或等于x的最大整数</span><br><span class="line">rand()			#返回<span class="number">0</span>和<span class="number">1</span>之间的一个随机数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="字符串连接函数"><a href="#字符串连接函数" class="headerlink" title="字符串连接函数"></a>字符串连接函数</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GROUP_CONCAT(str1,str2,...))     # 返回由属于一组的列值连接组合而成的结果</span><br><span class="line">concat(str1,str2,...)		#没有分隔符的连接字符串</span><br><span class="line">concat_ws(separator,str1,str2,...)		#含有分隔符的连接字符串</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="SQL判断语句："><a href="#SQL判断语句：" class="headerlink" title="SQL判断语句："></a>SQL判断语句：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br><span class="line"><span class="string">&#x27;or 1=1--+</span></span><br><span class="line"><span class="string">&quot;or 1=1--+</span></span><br><span class="line"><span class="string">)or 1=1--+</span></span><br><span class="line"><span class="string">&#x27;</span>)<span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br><span class="line">&quot;) or 1=1--+</span><br><span class="line">&quot;))<span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br></pre></td></tr></table></figure>
-<h4 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h4><p>PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。这些超全局变量是：</p>
+<h2 id="3-常用函数及变量">3. 常用函数及变量</h2>
+<h4 id="常用的字符串-系统函数">常用的字符串/系统函数</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="variable">@datadir</span>		#数据库路径</span><br><span class="line">@<span class="variable">@version</span>_compile_os		#操作系统版本</span><br><span class="line">DATABASE()     		#返回当前数据库名</span><br><span class="line"><span class="keyword">USER</span>()或<span class="built_in">SYSTEM_USER</span>()    		#返回当前登陆用户名</span><br><span class="line">VERSION()     		#返回数据库的版本</span><br><span class="line"></span><br><span class="line">SLEEP(n)  		#休眠n秒</span><br><span class="line">ASCII(<span class="type">char</span>)         #返回字符的ASCII码值</span><br><span class="line">ord()			#返回字符串第一个字符的ASCII值</span><br><span class="line"><span class="type">char</span>()			# 返回整数ASCIId</span><br><span class="line">mid()			#返回一个字符串的一部分</span><br><span class="line"><span class="keyword">SELECT</span> MID(<span class="string">&#x27;字符串&#x27;</span>, 起始位置, 截取长度)</span><br><span class="line">length()          #函数 返回字符串长度</span><br><span class="line">substr()          #函数 截取字符串 语法：(substr(string,<span class="keyword">start</span>,leng)</span><br><span class="line">if(ex1,ex2,ex3)            #判断语句，如果ex1正确，执行ex2，错误执行ex3</span><br><span class="line"></span><br><span class="line"><span class="keyword">left</span>() 			#返回字符串最左边的几个字符</span><br><span class="line"><span class="built_in">floor</span>()			# 返回小于或等于x的最大整数</span><br><span class="line">rand()			#返回<span class="number">0</span>和<span class="number">1</span>之间的一个随机数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="字符串连接函数">字符串连接函数</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GROUP_CONCAT(str1,str2,...))     # 返回由属于一组的列值连接组合而成的结果</span><br><span class="line">concat(str1,str2,...)		#没有分隔符的连接字符串</span><br><span class="line">concat_ws(separator,str1,str2,...)		#含有分隔符的连接字符串</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="SQL判断语句：">SQL判断语句：</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br><span class="line"><span class="string">&#x27;or 1=1--+</span></span><br><span class="line"><span class="string">&quot;or 1=1--+</span></span><br><span class="line"><span class="string">)or 1=1--+</span></span><br><span class="line"><span class="string">&#x27;</span>)<span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br><span class="line">&quot;) or 1=1--+</span><br><span class="line">&quot;))<span class="keyword">or</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span><span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+<h4 id="PHP">PHP</h4>
+<p>PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。这些超全局变量是：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable">$_REQUEST</span> （获取GET/POST/COOKIE） COOKIE在新版本已经无法获取了</span><br><span class="line"><span class="variable">$_POST</span>  （获取POST传参）</span><br><span class="line"><span class="variable">$_GET</span>  (获取GET的传参)</span><br><span class="line"><span class="variable">$_COOKIE</span>   （获取COOKIE的值）</span><br><span class="line"><span class="variable">$_SERVER</span>  （包含了诸如头信息(header)、路径(path)、以及脚本位置(script     locations)等等信息的数组）</span><br><span class="line"><span class="variable">$_SERVER</span>功能</span><br><span class="line">  常用的：</span><br><span class="line">  <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_HOST&#x27;</span>]  请求头信息中的Host内容，获取当前域名。</span><br><span class="line">  <span class="variable">$_SERVER</span>[<span class="string">&quot;HTTP_USER_AGENT&quot;</span>]  获取用户相关信息，包括用户浏览器、操作    系统等信息。</span><br><span class="line">  <span class="variable">$_SERVER</span>[<span class="string">&quot;REMOTE_ADDR&quot;</span>]  浏览网页的用户ip。</span><br></pre></td></tr></table></figure>
-<h4 id="Bypass常用简记："><a href="#Bypass常用简记：" class="headerlink" title="Bypass常用简记："></a>Bypass常用简记：</h4><p>详细另开一篇来说</p>
+<h4 id="Bypass常用简记：">Bypass常用简记：</h4>
+<p>详细另开一篇来说</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- and /or过滤</span></span><br><span class="line"><span class="keyword">or</span>     ——<span class="operator">&gt;</span>   <span class="operator">||</span></span><br><span class="line"><span class="keyword">and</span>     ——<span class="operator">&gt;</span>   <span class="operator">&amp;&amp;</span></span><br><span class="line">xor   ——<span class="operator">&gt;</span>   <span class="operator">|</span>  </span><br><span class="line"><span class="keyword">not</span>    ——<span class="operator">&gt;</span>  <span class="operator">!</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">-- urlencode，ascii(char)，hex，unicode等编码绕过</span></span><br><span class="line"><span class="comment">-- unicode编码举例：</span></span><br><span class="line"><span class="comment">-- 单引号：&#x27;</span></span><br><span class="line">  <span class="operator">%</span>u0027 <span class="operator">%</span>u02b9 <span class="operator">%</span>u02bc</span><br><span class="line">  <span class="operator">%</span>u02c8 <span class="operator">%</span>u2032</span><br><span class="line">  <span class="operator">%</span>uff07 <span class="operator">%</span>c0<span class="operator">%</span><span class="number">27</span></span><br><span class="line">  <span class="operator">%</span>c0<span class="operator">%</span>a7 <span class="operator">%</span>e0<span class="operator">%</span><span class="number">80</span><span class="operator">%</span>a7</span><br><span class="line"><span class="comment">-- 注释符</span></span><br><span class="line"> <span class="comment">/**/</span> </span><br><span class="line"> <span class="operator">%</span><span class="number">23</span> </span><br><span class="line"> <span class="comment">--+ </span></span><br><span class="line"> <span class="comment">/*!50000union*/</span></span><br><span class="line"><span class="comment">-- 空白符</span></span><br><span class="line"><span class="operator">%</span><span class="number">09</span>,<span class="operator">%</span><span class="number">0</span>a,<span class="operator">%</span><span class="number">0</span>b,<span class="operator">%</span><span class="number">0</span>c,<span class="operator">%</span><span class="number">0</span>d,<span class="operator">%</span><span class="number">20</span>,<span class="operator">%</span>a0</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"><span class="comment">-- 双写</span></span><br><span class="line">selselectect</span><br><span class="line">uniunionon</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 等价函数或变量</span></span><br><span class="line">hex()、bin() <span class="operator">=</span><span class="operator">=</span><span class="operator">&gt;</span> ascii()</span><br><span class="line"></span><br><span class="line">sleep() <span class="operator">=</span><span class="operator">=</span><span class="operator">&gt;</span>benchmark()</span><br><span class="line"></span><br><span class="line">concat_ws()<span class="operator">=</span><span class="operator">=</span><span class="operator">&gt;</span>group_concat()</span><br><span class="line"></span><br><span class="line">mid()、substr() <span class="operator">=</span><span class="operator">=</span><span class="operator">&gt;</span> <span class="built_in">substring</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">--------------------</span></span><br><span class="line"><span class="comment">-- 关于waf</span></span><br><span class="line">常见绕过手法:</span><br><span class="line">		大小写绕过 （很老的WAF才有用）</span><br><span class="line">		替换绕过 （很老的WAF才有用）【和上传文件那个pphphp一样】</span><br><span class="line">		特殊字符绕过 （<span class="operator">%</span><span class="number">0</span>a换行）``</span><br><span class="line">		编码绕过 （比如会多次解码的东西，例如我们DOM XSS绕狗那个）</span><br><span class="line">		等价替换 （利用其它函数替代）[<span class="keyword">union</span> #<span class="operator">%</span><span class="number">0</span>aselect 拦截][<span class="keyword">union</span> <span class="keyword">all</span> #<span class="operator">%</span><span class="number">0</span>aselect 不拦截]</span><br><span class="line">		容器特性（例如Apace的Hpp,或者是IIS的<span class="operator">%</span>分割）</span><br><span class="line">		白名单（管理员权限或者是<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>本地访问不拦截）</span><br><span class="line">		缓冲区    （数据太多了，超出了WAF检测的范围）</span><br><span class="line">........</span><br></pre></td></tr></table></figure>
-<h2 id="4-SQL注入点判断"><a href="#4-SQL注入点判断" class="headerlink" title="4. SQL注入点判断"></a>4. SQL注入点判断</h2><h3 id="常规手法"><a href="#常规手法" class="headerlink" title="常规手法"></a>常规手法</h3><p>注入存在多种检测方式，最简单无外乎在各种参数后添加<code>“</code>或<code>’</code>，从而来通过服务器返回的数据响应报错信息来分析。</p>
+<h2 id="4-SQL注入点判断">4. SQL注入点判断</h2>
+<h3 id="常规手法">常规手法</h3>
+<p>注入存在多种检测方式，最简单无外乎在各种参数后添加<code>“</code>或<code>’</code>，从而来通过服务器返回的数据响应报错信息来分析。</p>
 <p>通过应用程序的报错触发及布尔逻辑，可以轻松判断易受攻击的参数。</p>
 <blockquote>
 <p>注入简记</p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -613,58 +646,73 @@
 <tbody>
 <tr>
 <td>逻辑测试</td>
-<td>page.asp?id=1 or 1=1 — true  page.asp?id=1’ or 1=1 — true page.asp?id=1” or 1=1 — true page.asp?id=1 and 1=2 — false</td>
+<td>page.asp?id=1 or 1=1 – true  page.asp?id=1’ or 1=1 – true page.asp?id=1&quot; or 1=1 – true page.asp?id=1 and 1=2 – false</td>
 </tr>
 <tr>
 <td>算术</td>
-<td>product.asp?id=1/1 — true  product.asp?id=1/0 — false</td>
+<td>product.asp?id=1/1 – true  product.asp?id=1/0 – false</td>
 </tr>
 <tr>
 <td>基于盲注： 检测盲注可能需要识别或猜测DBMS， 并检查以找到适当的时间函数。</td>
-<td>Mysql：<br><em><code>SELECT IF(user() LIKE &#39;root@%&#39;, SLEEP(5), null)</code> <br></em>Oracle:<br><code>SELECT CASE WHEN (SELECT COUNT(*) FROM v$version WHERE banner LIKE  &#39;Oracle%11.2%&#39;)=1 THEN (SELECT count(*) FROM all_users a, all_users b,  all_users c, all_users d) ELSE 0 END FROM dual</code><br>SQL Server<br><br><code>*IF exists(SELECT @@version where @@version like &#39;%12.0.2000.8%&#39;) WAITFOR DELAY &#39;00:00:02&#39;*</code></td>
+<td>Mysql：<br>*<code>SELECT IF(user() LIKE 'root@%', SLEEP(5), null)</code> <br>*Oracle:<br><code>SELECT CASE WHEN (SELECT COUNT(*) FROM v$version WHERE banner LIKE  'Oracle%11.2%')=1 THEN (SELECT count(*) FROM all_users a, all_users b,  all_users c, all_users d) ELSE 0 END FROM dual</code><br>SQL Server<br><br><code>*IF exists(SELECT @@version where @@version like '%12.0.2000.8%') WAITFOR DELAY '00:00:02'*</code></td>
 </tr>
 <tr>
 <td>基于错误： 注意：使用无效语法的逻辑测试和算术 也可能会导致错误。</td>
-<td>Mysql：<br><em><code>SELECT extractvalue(rand(),concat(0x3a,(select version())))</code> <br></em>Oracle:<br><code>SELECT utl_inaddr.get_host_name((select banner from v$version where rownum=1)) FROM dual</code><br>SQL Server<br><br><code>*SELECT convert(int,(SELECT @@version)) &#39;*</code></td>
+<td>Mysql：<br>*<code>SELECT extractvalue(rand(),concat(0x3a,(select version())))</code> <br>*Oracle:<br><code>SELECT utl_inaddr.get_host_name((select banner from v$version where rownum=1)) FROM dual</code><br>SQL Server<br><br><code>*SELECT convert(int,(SELECT @@version)) '*</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="时间注入判断法"><a href="#时间注入判断法" class="headerlink" title="时间注入判断法"></a>时间注入判断法</h3><p>&lt;待补充实战&gt;</p>
-<h3 id="批量判断法"><a href="#批量判断法" class="headerlink" title="批量判断法"></a>批量判断法</h3><ul>
+<h3 id="时间注入判断法">时间注入判断法</h3>
+<p>&lt;待补充实战&gt;</p>
+<h3 id="批量判断法">批量判断法</h3>
+<ul>
 <li>SQLMAP</li>
 <li>sqliv</li>
 <li>sqlmapapi.</li>
 <li>URL参数批量提取去重后再结合漏洞扫描工具</li>
 </ul>
-<h2 id="5-SQL注入常见注释符"><a href="#5-SQL注入常见注释符" class="headerlink" title="5. SQL注入常见注释符"></a>5. SQL注入常见注释符</h2><h3 id="常规注释："><a href="#常规注释：" class="headerlink" title="常规注释："></a>常规注释：</h3><p>SQL 语句注释方法有<code>/* */</code> 和<code>-- (空格)</code>和<code>#</code>三种</p>
-<h3 id="php中的注释符："><a href="#php中的注释符：" class="headerlink" title="php中的注释符："></a>php中的注释符：</h3><ul>
+<h2 id="5-SQL注入常见注释符">5. SQL注入常见注释符</h2>
+<h3 id="常规注释：">常规注释：</h3>
+<p>SQL 语句注释方法有<code>/* */</code> 和<code>-- (空格)</code>和<code># </code>三种</p>
+<h3 id="php中的注释符：">php中的注释符：</h3>
+<ul>
 <li><code>//</code></li>
 <li><code>/*...*/</code></li>
 <li><code>#</code></li>
 </ul>
-<h3 id="JavaScript中的注释符："><a href="#JavaScript中的注释符：" class="headerlink" title="JavaScript中的注释符："></a>JavaScript中的注释符：</h3><ul>
+<h3 id="JavaScript中的注释符：">JavaScript中的注释符：</h3>
+<ul>
 <li><code>//</code></li>
 <li><code>/*...*/</code></li>
 </ul>
-<h3 id="html中的注释符："><a href="#html中的注释符：" class="headerlink" title="html中的注释符："></a>html中的注释符：</h3><ul>
+<h3 id="html中的注释符：">html中的注释符：</h3>
+<ul>
 <li><code>&lt;!--内容--&gt;</code></li>
 </ul>
-<h3 id="MySQL中的注释符："><a href="#MySQL中的注释符：" class="headerlink" title="MySQL中的注释符："></a>MySQL中的注释符：</h3><ul>
-<li><code>#</code></li>
-<li>内联注释<code>/*...*/</code><br> 在mysql中是多行注释 但是如果里面加了! 那么后面的内容会被执行</li>
-<li><code>--空格</code></li>
-<li><p><code>--+</code></p>
+<h3 id="MySQL中的注释符：">MySQL中的注释符：</h3>
 <ul>
-<li><code>--（空格）</code>一般不能直接使用，因为只使用<code>--（空格）</code>的时候无法对sql语句进行闭合，在传输过程中空格会被忽略，导致无法注释，所以需要需要<code>+</code>或是<code>’</code>、<code>%20</code><em>（把空格转换未urlencode编码格式）</em>来对其进行闭合完成注入语句。</li>
+<li>
+<p><code>#</code></p>
+</li>
+<li>
+<p>内联注释<code>/*...*/</code><br>
+在mysql中是多行注释 但是如果里面加了! 那么后面的内容会被执行</p>
+</li>
+<li>
+<p><code>--空格</code></p>
+</li>
+<li>
+<p><code>--+</code></p>
+<ul>
+<li><code>--（空格）</code>一般不能直接使用，因为只使用<code>--（空格）</code>的时候无法对sql语句进行闭合，在传输过程中空格会被忽略，导致无法注释，所以需要需要<code>+</code>或是<code>’</code>、<code>%20</code>*（把空格转换未urlencode编码格式）*来对其进行闭合完成注入语句。</li>
 <li><code>+</code>会被解析成空格； <code>--</code>是SQL的注释标记，使用时后面的一切字符串都会比当做注释忽略掉</li>
 </ul>
 <blockquote>
-<p>postgersql注释符号也是—+</p>
+<p>postgersql注释符号也是–+</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="Mssql-注释"><a href="#Mssql-注释" class="headerlink" title="Mssql 注释"></a>Mssql 注释</h3><div class="table-container">
+<h3 id="Mssql-注释">Mssql 注释</h3>
 <table>
 <thead>
 <tr>
@@ -687,19 +735,23 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="Oracle注释"><a href="#Oracle注释" class="headerlink" title="Oracle注释"></a>Oracle注释</h3><ul>
-<li><p>单行注释符号是<code>--</code></p>
+<h3 id="Oracle注释">Oracle注释</h3>
+<ul>
+<li>
+<p>单行注释符号是<code>--</code></p>
 </li>
-<li><p>多行注释符号<code>/**/</code></p>
+<li>
+<p>多行注释符号<code>/**/</code></p>
 </li>
 </ul>
-<h3 id="URL中-、？、-amp-、-解释："><a href="#URL中-、？、-amp-、-解释：" class="headerlink" title="URL中#、？、&amp;、+解释："></a>URL中<code>#</code>、<code>？</code>、<code>&amp;</code>、<code>+</code>解释：</h3><h4 id="说明"><a href="#说明" class="headerlink" title="#说明"></a><code>#</code>说明</h4><p><strong><code>#</code>的涵义</strong></p>
+<h3 id="URL中-、？、-、-解释：">URL中<code>#</code>、<code>？</code>、<code>&amp;</code>、<code>+</code>解释：</h3>
+<h4 id="说明"><code>#</code>说明</h4>
+<p><strong><code>#</code>的涵义</strong></p>
 <ul>
 <li><code>#</code>在URL 中会被认为是锚点， sql注入中想要使用需要进行编码。 url 编码为<code>%23</code>。</li>
-<li><code>#</code>代表网页中的一个位置。其右面的字符，就是该位置的标识符。比如，<a target="_blank" rel="noopener" href="http://www.example.com/index.html#print就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域">http://www.example.com/index.html#print就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域</a></li>
+<li><code>#</code>代表网页中的一个位置。其右面的字符，就是该位置的标识符。比如，<a target="_blank" rel="noopener" href="http://www.example.com/index.html#print%E5%B0%B1%E4%BB%A3%E8%A1%A8%E7%BD%91%E9%A1%B5index.html%E7%9A%84print%E4%BD%8D%E7%BD%AE%E3%80%82%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BB%E5%8F%96%E8%BF%99%E4%B8%AAURL%E5%90%8E%EF%BC%8C%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%B0%86print%E4%BD%8D%E7%BD%AE%E6%BB%9A%E5%8A%A8%E8%87%B3%E5%8F%AF%E8%A7%86%E5%8C%BA%E5%9F%9F">http://www.example.com/index.html#print就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域</a></li>
 </ul>
-<p><strong>HTTP请求不包括 <code>#</code></strong></p>
+<p><strong>HTTP请求不包括 <code># </code></strong></p>
 <ul>
 <li><code>#</code>是用来指导浏览器动作的，对服务器端完全无用。所以，HTTP请求中不包括#</li>
 </ul>
@@ -707,7 +759,8 @@
 <ul>
 <li>在第一个#后面出现的任何字符，都会被浏览器解读为位置标识符。这意味着，这些字符都不会被发送到服务器端</li>
 </ul>
-<h4 id="说明-1"><a href="#说明-1" class="headerlink" title="?说明"></a><code>?</code>说明</h4><p><strong>连接作用</strong></p>
+<h4 id="说明-2"><code>?</code>说明</h4>
+<p><strong>连接作用</strong></p>
 <ul>
 <li>通过<code>？</code>来带参数，连接域名和参数，经常会用到。</li>
 </ul>
@@ -716,12 +769,15 @@
 <ul>
 <li>两个url打开的页面一样，但是后面这个有问号，说明不调用缓存的内容，而认为是一个新地址，重新读取。因为在做http请求的时候，如果浏览器检测到你的地址完全没变，会从缓存里读取先前请求过的数据，不再发送请求。有些时候是页面资源的加载，有些时候是API的get请求，都有可能。加上这个，会让浏览器认为这是一个新的地址，从而保证重新获取资源。</li>
 </ul>
-<h4 id="amp-说明"><a href="#amp-说明" class="headerlink" title="&amp;说明"></a><code>&amp;</code>说明</h4><p><strong>不同参数的间隔符</strong></p>
+<h4 id="说明-3"><code>&amp;</code>说明</h4>
+<p><strong>不同参数的间隔符</strong></p>
 <ul>
 <li><code>http://www.xxx.com/Show.asp?id=77&amp;nameid=2905210001&amp;page=1</code></li>
 </ul>
-<h4 id="说明-2"><a href="#说明-2" class="headerlink" title="+说明"></a><code>+</code>说明</h4><p><code>+</code>在URL 中会被认为是空格,所以<code>--+</code>和<code>--空格</code>在sql中都有注释的意思</p>
-<h1 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h1><ol>
+<h4 id="说明-4"><code>+</code>说明</h4>
+<p><code>+</code>在URL 中会被认为是空格,所以<code>--+</code>和<code>--空格</code>在sql中都有注释的意思</p>
+<h1>参考链接：</h1>
+<ol>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/p_NHl975fhjUMlx5LKxRHw">https://mp.weixin.qq.com/s/p_NHl975fhjUMlx5LKxRHw</a></li>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/L5RuWT7V9q4b6OZwfdscjg">https://mp.weixin.qq.com/s/L5RuWT7V9q4b6OZwfdscjg</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaozi/p/5538380.html">https://www.cnblogs.com/xiaozi/p/5538380.html</a></li>
@@ -750,7 +806,7 @@
 <div class="tip">
   <p>
     
-      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+      -------------------------------------------------------------------------------- If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
     
   </p>
 </div>
@@ -875,7 +931,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">SQL注入基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-SQL%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. SQL注入原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFsql"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">什么是sql</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">SQL语句常见操作方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFsql%E6%B3%A8%E5%85%A5"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">什么是sql注入</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">注入条件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">注入点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8D%B1%E5%AE%B3%EF%BC%9A"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">危害：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">常见的修复方案</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.1.8.</span> <span class="toc-nav-text">注入流程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. SQL注入的基本分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">参数类型分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">注入点分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%8D%E9%A6%88%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">结果反馈分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%9E%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">非盲注</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">盲注</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E5%80%BC"><span class="toc-nav-number">1.2.3.2.1.</span> <span class="toc-nav-text">基于布尔值</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4"><span class="toc-nav-number">1.2.3.2.2.</span> <span class="toc-nav-text">基于时间</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">其他类型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8F%98%E9%87%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 常用函数及变量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.0.1.</span> <span class="toc-nav-text">常用的字符串&#x2F;系统函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.0.2.</span> <span class="toc-nav-text">字符串连接函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SQL%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-nav-number">1.3.0.3.</span> <span class="toc-nav-text">SQL判断语句：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#PHP"><span class="toc-nav-number">1.3.0.4.</span> <span class="toc-nav-text">PHP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Bypass%E5%B8%B8%E7%94%A8%E7%AE%80%E8%AE%B0%EF%BC%9A"><span class="toc-nav-number">1.3.0.5.</span> <span class="toc-nav-text">Bypass常用简记：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-SQL%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%A4%E6%96%AD"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. SQL注入点判断</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%84%E6%89%8B%E6%B3%95"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">常规手法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E6%B3%A8%E5%85%A5%E5%88%A4%E6%96%AD%E6%B3%95"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">时间注入判断法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%89%B9%E9%87%8F%E5%88%A4%E6%96%AD%E6%B3%95"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">批量判断法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-SQL%E6%B3%A8%E5%85%A5%E5%B8%B8%E8%A7%81%E6%B3%A8%E9%87%8A%E7%AC%A6"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. SQL注入常见注释符</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%84%E6%B3%A8%E9%87%8A%EF%BC%9A"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">常规注释：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#php%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">php中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JavaScript%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">JavaScript中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#html%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">html中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MySQL%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.5.</span> <span class="toc-nav-text">MySQL中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mssql-%E6%B3%A8%E9%87%8A"><span class="toc-nav-number">1.5.6.</span> <span class="toc-nav-text">Mssql 注释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Oracle%E6%B3%A8%E9%87%8A"><span class="toc-nav-number">1.5.7.</span> <span class="toc-nav-text">Oracle注释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#URL%E4%B8%AD-%E3%80%81%EF%BC%9F%E3%80%81-amp-%E3%80%81-%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-nav-number">1.5.8.</span> <span class="toc-nav-text">URL中#、？、&amp;、+解释：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.5.8.1.</span> <span class="toc-nav-text">#说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-1"><span class="toc-nav-number">1.5.8.2.</span> <span class="toc-nav-text">?说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#amp-%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.5.8.3.</span> <span class="toc-nav-text">&amp;说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-2"><span class="toc-nav-number">1.5.8.4.</span> <span class="toc-nav-text">+说明</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">参考链接：</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">SQL注入基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-SQL%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. SQL注入原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFsql"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">什么是sql</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">SQL语句常见操作方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFsql%E6%B3%A8%E5%85%A5"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">什么是sql注入</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">注入条件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">注入点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8D%B1%E5%AE%B3%EF%BC%9A"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">危害：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">常见的修复方案</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.1.8.</span> <span class="toc-nav-text">注入流程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. SQL注入的基本分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">参数类型分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">注入点分类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%8D%E9%A6%88%E5%88%86%E7%B1%BB"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">结果反馈分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%9E%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.3.1.</span> <span class="toc-nav-text">非盲注</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.3.2.</span> <span class="toc-nav-text">盲注</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E5%80%BC"><span class="toc-nav-number">1.2.3.2.1.</span> <span class="toc-nav-text">基于布尔值</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4"><span class="toc-nav-number">1.2.3.2.2.</span> <span class="toc-nav-text">基于时间</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">其他类型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8F%98%E9%87%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 常用函数及变量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.0.1.</span> <span class="toc-nav-text">常用的字符串&#x2F;系统函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.0.2.</span> <span class="toc-nav-text">字符串连接函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SQL%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5%EF%BC%9A"><span class="toc-nav-number">1.3.0.3.</span> <span class="toc-nav-text">SQL判断语句：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#PHP"><span class="toc-nav-number">1.3.0.4.</span> <span class="toc-nav-text">PHP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Bypass%E5%B8%B8%E7%94%A8%E7%AE%80%E8%AE%B0%EF%BC%9A"><span class="toc-nav-number">1.3.0.5.</span> <span class="toc-nav-text">Bypass常用简记：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-SQL%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%A4%E6%96%AD"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. SQL注入点判断</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%84%E6%89%8B%E6%B3%95"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">常规手法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E6%B3%A8%E5%85%A5%E5%88%A4%E6%96%AD%E6%B3%95"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">时间注入判断法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%89%B9%E9%87%8F%E5%88%A4%E6%96%AD%E6%B3%95"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">批量判断法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-SQL%E6%B3%A8%E5%85%A5%E5%B8%B8%E8%A7%81%E6%B3%A8%E9%87%8A%E7%AC%A6"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. SQL注入常见注释符</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%84%E6%B3%A8%E9%87%8A%EF%BC%9A"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">常规注释：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#php%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">php中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JavaScript%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">JavaScript中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#html%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">html中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MySQL%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%AC%A6%EF%BC%9A"><span class="toc-nav-number">1.5.5.</span> <span class="toc-nav-text">MySQL中的注释符：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mssql-%E6%B3%A8%E9%87%8A"><span class="toc-nav-number">1.5.6.</span> <span class="toc-nav-text">Mssql 注释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Oracle%E6%B3%A8%E9%87%8A"><span class="toc-nav-number">1.5.7.</span> <span class="toc-nav-text">Oracle注释</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#URL%E4%B8%AD-%E3%80%81%EF%BC%9F%E3%80%81-%E3%80%81-%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-nav-number">1.5.8.</span> <span class="toc-nav-text">URL中#、？、&amp;、+解释：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.5.8.1.</span> <span class="toc-nav-text">#说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-2"><span class="toc-nav-number">1.5.8.2.</span> <span class="toc-nav-text">?说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-3"><span class="toc-nav-number">1.5.8.3.</span> <span class="toc-nav-text">&amp;说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-4"><span class="toc-nav-number">1.5.8.4.</span> <span class="toc-nav-text">+说明</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">参考链接：</span></a></li></ol>
         
         </div>
       </aside>
@@ -1011,14 +1067,11 @@
           2021
           <br>
           Theme by
-          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
           <span style="display: inline-block; margin: 0 5px;">
             <i class="fa fa-heart"></i>
           </span>
-          re-Ported by
-          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
-          |
-          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+          // <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
         </p>
       </div>
     </div>
@@ -1054,7 +1107,7 @@
 
   
     <!-- Mouseclick -->
-    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Le vent se lève, il faut tenter de vivre...,I shot an arrow into the air...,It fell to earth, I knew not where...,Some of us get dipped in flat...,some in satin, some in gloss...,But every once in a while you find someone who&#39;s iridescent...,and when you do, nothing will ever compare...,Bravery never goes out of fashion...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
   
 
   

@@ -128,10 +128,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/tags/SQL/">
+  <link rel="canonical" href="http://yoursite-url/渗透测试/组件/Memcache安全配置/">
   <title>
     
-      0nlyuAar0n|di.did.didi.di..
+      Memcache安全配置 - 0nlyuAar0n|di.did.didi.di..
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -327,19 +327,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/GoFar.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/PTES/19.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/PTES/19.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/GoFar.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/PTES/19.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/PTES/19.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/PTES/19.jpg'); */
       
     }
 
@@ -361,10 +361,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>奈何太菜...</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">See Far,Go Further</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#渗透测试" title="渗透测试">渗透测试</a>
+              
+              <a class="tag" href="/tags/#组件" title="组件">组件</a>
+              
+            </div>
+            <h1>Memcache安全配置</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 0nlyuAar0n on
+              2021-09-15
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">5</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.5k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -405,412 +439,334 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1>Memcache安全配置</h1>
+<h2 id="0x00-Memcache简介">0x00 Memcache简介</h2>
+<hr>
+<p>Memcache是一个高性能的分布式的内存对象缓存系统，通过在内存里维护一个统一的巨大的hash表，它能够用来存储各种格式的数据，包括图像、视频、文件以及数据库检索的结果等。简单的说就是将数据调用到内存中，然后从内存中读取，从而大大提高读取速度。</p>
+<p>Memcache是danga的一个项目，最早是LiveJournal 服务的，最初为了加速 LiveJournal 访问速度而开发的，后来被很多大型的网站采用。</p>
+<p>Memcached是以守护程序方式运行于一个或多个服务器中，随时会接收客户端的连接和操作。</p>
+<h2 id="0x01-搭建Memcache服务">0x01 搭建Memcache服务</h2>
+<hr>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> memcached </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>安装memcache服务端</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> php-pecl-memcache </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>安装php扩展操作memcache</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php -m <span class="string">| grep memcache </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>查看php扩展是否安装成功</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memcached -d -m <span class="number">100</span> -u root -l <span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span>.<span class="keyword">x</span> -p <span class="number">11211</span> -<span class="keyword">c</span> <span class="number">512</span> -P /tmp/memcached.pid</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-d选项是启动一个守护进程；</span></span><br><span class="line"><span class="deletion">-m是分配给Memcache使用的内存数量，单位是MB，我这里是100MB；</span></span><br><span class="line"><span class="deletion">-u是运行Memcache的用户，我这里是root；</span></span><br><span class="line"><span class="deletion">-l是监听的服务器IP地址我这里指定了服务器的IP地址x.x.x.x；</span></span><br><span class="line"><span class="deletion">-p是设置Memcache监听的端口，我这里设置了11211，最好是1024以上的端口；</span></span><br><span class="line"><span class="deletion">-c选项是最大运行的并发连接数，默认是1024，我这里设置了512，按照你服务器的负载量来设定；</span></span><br><span class="line"><span class="deletion">-P是设置保存Memcache的pid文件，我这里是保存在 /tmp/memcached.pid；</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>想要结束memcache进程</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill `cat /tmp/memcached.pid` </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>设置开机启动</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">chkconfig</span> memcached <span class="literal">on</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>phpMemcachedAdmin图形化界面，操作memcache，类似phpmyadmin</p>
+<p><a target="_blank" rel="noopener" href="http://blog.elijaa.org/index.php?pages/phpMemcachedAdmin-Installation-Guide">http://blog.elijaa.org/index.php?pages/phpMemcachedAdmin-Installation-Guide</a></p>
+<p>Execute Commands on Servers那里可以执行命令。</p>
+<p>当然了用telnet其实是一样的。</p>
+<h2 id="0x02-memcache匿名访问危害">0x02 memcache匿名访问危害</h2>
+<hr>
+<p>在乌云提交的漏洞当中，有很多因为memecache限制不严格，导致信息泄露的问题：</p>
+<p><a target="_blank" rel="noopener" href="http://www.wooyun.org/bugs/wooyun-2010-0790">WooYun: memcached未作IP限制导致缓存数据可被攻击者控制</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.wooyun.org/bugs/wooyun-2013-037301">WooYun: 通过Memcache缓存直接获取某物流网用户密码等敏感数据</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.wooyun.org/bugs/wooyun-2013-023891">WooYun: 56.com memcached端口可以远程使用</a></p>
+<p>从memcache中获取信息通常是先查看items信息：</p>
+<p>stats items</p>
+<p><img src="http://drops.javaweb.org/uploads/images/ac2d6fd52907d2cba6d7eeefb29dd25bdc379257.jpg" alt="enter image description here"></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stats cachedump &lt;<span class="built_in">item</span>: <span class="built_in">id</span>&gt; &lt;返回结果数量,<span class="number">0</span>代表返回全部&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="http://drops.javaweb.org/uploads/images/fec70fea74060a178cde99458e982f8dc7a31795.jpg" alt="enter image description here"></p>
+<p>除了查看信息，通用可以修改删除信息。</p>
+<p>phpMemcachedAdmin执行命令那里也有个可以搜索key的脚本，并且支持正则匹配。</p>
+<h2 id="0x03-查找可匿名访问memcache的方式">0x03 查找可匿名访问memcache的方式</h2>
+<hr>
+<p>memcache默认是11211端口，可使用nmap扫描有开11211端口的服务器。</p>
+<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmap -n --open -p 11211 <span class="meta">X</span>.<span class="meta">X</span>.<span class="meta">X</span>.<span class="meta">X</span>/24</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后telnet上，执行下</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">stats items</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>看看是否有返回结果。</p>
+<h2 id="0x04安全配置">0x04安全配置</h2>
+<hr>
+<p>Memcache服务器端都是直接通过客户端连接后直接操作，没有任何的验证过程，这样如果服务器是直接暴露在互联网上的话是比较危险，轻则数据泄露被其他无关人员查看，重则服务器被入侵，因为Mecache是以root权限运行的，况且里面可能存在一些我们未知的bug或者是缓冲区溢出的情况，这些都是我们未知的，所以危险性是可以预见的。</p>
+<h3 id="1-内网访问">1. 内网访问</h3>
+<p>如果memcache没有对外访问的必要，可在memcached启动的时候指定绑定的ip地址为 127.0.0.1。其中 -l 参数指定为本机地址。例如：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">memcached</span> -d -m <span class="number">1024</span> -u root -l <span class="number">127.0.0.1</span> -p <span class="number">11211</span> -c <span class="number">1024</span> -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+<p>最好把两台服务器之间的访问是内网形态的，一般是Web服务器跟Memcache服务器之间。普遍的服务器都是有两块网卡，一块指向互联网，一块指向内网，那么就让Web服务器通过内网的网卡来访问Memcache服务器，我们Memcache的服务器上启动的时候就监听内网的IP地址和端口，内网间的访问能够有效阻止其他非法的访问。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># memcached -d -m <span class="number">1024</span> -u root -l <span class="number">192.168</span>.<span class="number">0.200</span> -<span class="selector-tag">p</span> <span class="number">11211</span> -c <span class="number">1024</span> -<span class="selector-tag">P</span> /tmp/memcached<span class="selector-class">.pid</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Memcache服务器端设置监听通过内网的192.168.0.200的ip的11211端口，占用1024MB内存，并且允许最大1024个并发连接</p>
+<h3 id="2-设置防火墙">2. 设置防火墙</h3>
+<p>防火墙是简单有效的方式，如果却是两台服务器都是挂在网的，并且需要通过外网IP来访问Memcache的话，那么可以考虑使用防火墙或者代理程序来过滤非法访问。 一般我们在Linux下可以使用iptables或者FreeBSD下的ipfw来指定一些规则防止一些非法的访问，比如我们可以设置只允许我们的Web服务器来访问我们Memcache服务器，同时阻止其他的访问。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># iptables -F</span><br><span class="line"># iptables -<span class="selector-tag">P</span> <span class="selector-tag">INPUT</span> DROP</span><br><span class="line"># iptables -<span class="selector-tag">A</span> <span class="selector-tag">INPUT</span> -<span class="selector-tag">p</span> tcp -s <span class="number">192.168</span>.<span class="number">0.2</span> --dport <span class="number">11211</span> -j ACCEPT</span><br><span class="line"># iptables -<span class="selector-tag">A</span> <span class="selector-tag">INPUT</span> -<span class="selector-tag">p</span> udp -s <span class="number">192.168</span>.<span class="number">0.2</span> --dport <span class="number">11211</span> -j ACCEPT</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>上面的iptables规则就是只允许192.168.0.2这台Web服务器对Memcache服务器的访问，能够有效的阻止一些非法访问，相应的也可以增加一些其他的规则来加强安全性，这个可以根据自己的需要来做。</p>
+<h3 id="3-使用最小化权限账号运行Memcached服务">3. 使用最小化权限账号运行Memcached服务</h3>
+<p>使用普通权限账号运行，指定Memcached用户。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">memcached</span> -d -m <span class="number">1024</span> -u memcached -l <span class="number">127.0.0.1</span> -p <span class="number">11211</span> -c <span class="number">1024</span> -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+<h3 id="4-启用认证功能">4. 启用认证功能</h3>
+<p>Memcached本身没有做验证访问模块,Memcached从1.4.3版本开始，能支持SASL认证。<a target="_blank" rel="noopener" href="http://www.postfix.org/SASL_README.html?spm=a2c4g.11186623.2.5.RpKdcX##saslauthd">SASL认证详细配置手册</a></p>
+<h3 id="5-修改默认端口">5. 修改默认端口</h3>
+<p>修改默认11211监听端口为11222端口。在Linux环境中运行以下命令：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">memcached</span> -d -m <span class="number">1024</span> -u memcached -l <span class="number">127.0.0.1</span> -p <span class="number">11222</span> -c <span class="number">1024</span> -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+<h3 id="6-定期升级">6. 定期升级</h3>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            12-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Tools/【Tools】JetBrains系列激活/" style="color: #0085a1">
-              <span>
-                【Tools】JetBrains系列激活
-                
-                -- Tools
-                
-              </span>
-            </a>
+          <li class="previous">
+            <a href="/渗透测试/速查表/常见产品弱口令/" data-toggle="tooltip" data-placement="top" title="常见产品弱口令">&larr; Previous Post</a>
           </li>
           
-          <li>
-            12-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/速查表/常见产品弱口令/" style="color: #0085a1">
-              <span>
-                常见产品弱口令
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            09-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/组件/Memcache安全配置/" style="color: #0085a1">
-              <span>
-                Memcache安全配置
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-18
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Tools/kali之网络助手肝墙/" style="color: #0085a1">
-              <span>
-                kali之网络助手肝墙
-                
-                -- Tools
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-15
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/【红队攻防】SQL注入基础及利用链/" style="color: #0085a1">
-              <span>
-                【红队攻防】SQL注入利用链之基础
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/速查表/xss盲打payload及其绕过/" style="color: #0085a1">
-              <span>
-                xss盲打payload及其绕过
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Go/GOland教程/" style="color: #0085a1">
-              <span>
-                GOland教程
-                
-                -- Go
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/渗透测试/WEB应用漏洞简单总结/" style="color: #0085a1">
-              <span>
-                WEB应用漏洞简单总结
-                
-                -- 渗透测试
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Blog/Typore+hexo图片同步/" style="color: #0085a1">
-              <span>
-                Typore+hexo图片同步
-                
-                -- Blog
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Blog/HEXO+VPS个人博客搭建/" style="color: #0085a1">
-              <span>
-                HEXO+VPS个人博客搭建
-                
-                -- Blog
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/Go/Go介绍/" style="color: #0085a1">
-              <span>
-                Go介绍
-                
-                -- Go
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/Tools/kali之网络助手肝墙/" data-toggle="tooltip" data-placement="top" title="kali之网络助手肝墙">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      -------------------------------------------------------------------------------- If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Memcache安全配置&body=Hi,I found this website and thought you might like it http://yoursite-url/渗透测试/组件/Memcache安全配置/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '6daf597fa0a20b7d167d',
+      clientSecret: 'd7815897cdef77f24783de4c4023612fd330929d',
+      repo: 'https://github.com/0nlyuAarOn/BloG_gitalk.git',
+      owner: '0nlyuAar0n',
+      admin: '[&#39;0nlyu&#39;]',
+      id: 'Wed Sep 15 2021 19:19:47 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Memcache安全配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x00-Memcache%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">0x00 Memcache简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x01-%E6%90%AD%E5%BB%BAMemcache%E6%9C%8D%E5%8A%A1"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">0x01 搭建Memcache服务</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x02-memcache%E5%8C%BF%E5%90%8D%E8%AE%BF%E9%97%AE%E5%8D%B1%E5%AE%B3"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">0x02 memcache匿名访问危害</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x03-%E6%9F%A5%E6%89%BE%E5%8F%AF%E5%8C%BF%E5%90%8D%E8%AE%BF%E9%97%AEmemcache%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">0x03 查找可匿名访问memcache的方式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0x04%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">0x04安全配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E5%86%85%E7%BD%91%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">1. 内网访问</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">2. 设置防火墙</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E5%8C%96%E6%9D%83%E9%99%90%E8%B4%A6%E5%8F%B7%E8%BF%90%E8%A1%8CMemcached%E6%9C%8D%E5%8A%A1"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">3. 使用最小化权限账号运行Memcached服务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-%E5%90%AF%E7%94%A8%E8%AE%A4%E8%AF%81%E5%8A%9F%E8%83%BD"><span class="toc-nav-number">1.5.4.</span> <span class="toc-nav-text">4. 启用认证功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3"><span class="toc-nav-number">1.5.5.</span> <span class="toc-nav-text">5. 修改默认端口</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-%E5%AE%9A%E6%9C%9F%E5%8D%87%E7%BA%A7"><span class="toc-nav-number">1.5.6.</span> <span class="toc-nav-text">6. 定期升级</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#渗透测试" title="渗透测试">渗透测试</a>
+            
+            <a class="tag" href="/tags/#组件" title="组件">组件</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Blog" title="Blog" rel="2">Blog</a>
-    
-    
-    
-    <a href="/tags/#Go" title="Go" rel="2">Go</a>
-    
-    
-    
-    <a href="/tags/#Tools" title="Tools" rel="2">Tools</a>
-    
-    
-    
-    <a href="/tags/#kali" title="kali" rel="1">kali</a>
-    
-    
-    
-    <a href="/tags/#渗透测试" title="渗透测试" rel="4">渗透测试</a>
-    
-    
-    
-    <a href="/tags/#SQL" title="SQL" rel="1">SQL</a>
-    
-    
-    
-    <a href="/tags/#速查表" title="速查表" rel="2">速查表</a>
-    
-    
-    
-    <a href="/tags/#弱口令" title="弱口令" rel="1">弱口令</a>
-    
-    
-    
-    <a href="/tags/#小日常" title="小日常" rel="1">小日常</a>
-    
-    
-    
-    <a href="/tags/#web漏洞" title="web漏洞" rel="1">web漏洞</a>
-    
-    
-    
-    <a href="/tags/#IDE" title="IDE" rel="1">IDE</a>
-    
-    
-    
-    <a href="/tags/#组件" title="组件" rel="1">组件</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/sec.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Full stack security, helpless too dish...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../Tools/%E3%80%90Tools%E3%80%91JetBrains%E7%B3%BB%E5%88%97%E6%BF%80%E6%B4%BB/">
-      <li>【Tools】JetBrains系列激活</li>
-    </a>
-    
-    <a href="../../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E9%80%9F%E6%9F%A5%E8%A1%A8/%E5%B8%B8%E8%A7%81%E4%BA%A7%E5%93%81%E5%BC%B1%E5%8F%A3%E4%BB%A4/">
-      <li>常见产品弱口令</li>
-    </a>
-    
-    <a href="../../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E7%BB%84%E4%BB%B6/Memcache%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/">
-      <li>Memcache安全配置</li>
-    </a>
-    
-    <a href="../../Tools/kali%E4%B9%8B%E7%BD%91%E7%BB%9C%E5%8A%A9%E6%89%8B%E8%82%9D%E5%A2%99/">
-      <li>kali之网络助手肝墙</li>
-    </a>
-    
-    <a href="../../%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E3%80%90%E7%BA%A2%E9%98%9F%E6%94%BB%E9%98%B2%E3%80%91SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%E5%8F%8A%E5%88%A9%E7%94%A8%E9%93%BE/">
-      <li>【红队攻防】SQL注入利用链之基础</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://www.nhtcai.top/" target="_blank">0nlyuAar0n</a></li>
-  
-  <li><a href="https://www.nhtc.wiki/" target="_blank">奈何太菜</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/08/">August 2021</a><span class="archive-list-count">8</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Blog">
-      <li>Blog</li>
-    </a>
-    
-    <a href="/categories/#Go">
-      <li>Go</li>
-    </a>
-    
-    <a href="/categories/#Tools">
-      <li>Tools</li>
-    </a>
-    
-    <a href="/categories/#渗透测试">
-      <li>渗透测试</li>
-    </a>
-    
-    <a href="/categories/#速查表">
-      <li>速查表</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://www.nhtcai.top/" target="_blank">0nlyuAar0n</a>
+          </li>
+          
+          <li>
+            <a href="https://www.nhtc.wiki/" target="_blank">奈何太菜</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

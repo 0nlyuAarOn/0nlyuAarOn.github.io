@@ -600,16 +600,16 @@
 <p>常用的延时函数或指令有<code>sleep</code>、<code>repeat</code>等。</p>
 <h3 id="其他类型">其他类型</h3>
 <p><strong>延时注入：</strong> 使用延时函数方式。</p>
-<p>**宽字节注入：**设置MySQL连接时错误配置为：<code>set character_set_client=gbk</code>，这样配置会引发编码转换从而导致的注入漏洞。</p>
-<p>**编码注入：**将输入的字符串进行编码，如base64、urldecode、base64_decode等。</p>
-<p>**报错注入：**由于开启错误调试信息，导致可看到语句执行后的报错信息输出，从而引发sql注入。</p>
-<p><strong>DNSLOG注入：</strong> 在注入无回显时，利用MySQL数据库的 LOAD_FILE() 读取文件的函数去拼接查询结果并访问用于拼接的dns平台，然后通过平台去进行查看接收到的数据。</p>
-<p>**堆查询注入：**同时执行多条语句。</p>
-<p>**联合查询注入：**使用union语句合并两条或多条SQL语句。</p>
-<p>**多阶注入：**由多个HTTP请求响应共同完成的注入。</p>
-<p><strong>二次注入：</strong>  根本问题是，开发者信任数据库中取出的数据是无害的。payload拼接进行SQL注入，在全局过滤后入库时，进行了转义，入库后，转义符会消失，这个时候出库被带入到其他SQL语句就会引入payload导致注入。</p>
-<p>**XFF注入：**X- Forwarded-For头带入数据操作时，参数由用户可控，传递中存在SQL注入。</p>
-<p>**存储过程：**存储过程包含参数，在参数传递中存在SQL注入。</p>
+<p><strong>宽字节注入：</strong> 设置MySQL连接时错误配置为：<code>set character_set_client=gbk</code>，这样配置会引发编码转换从而导致的注入漏洞。</p>
+<p><strong>编码注入：</strong> 将输入的字符串进行编码，如base64、urldecode、base64_decode等。</p>
+<p><strong>报错注入：</strong> 由于开启错误调试信息，导致可看到语句执行后的报错信息输出，从而引发sql注入。</p>
+<p><strong>DNSLOG注入：</strong>  在注入无回显时，利用MySQL数据库的 LOAD_FILE() 读取文件的函数去拼接查询结果并访问用于拼接的dns平台，然后通过平台去进行查看接收到的数据。</p>
+<p><strong>堆查询注入：</strong> 同时执行多条语句。</p>
+<p><strong>联合查询注入：</strong> 使用union语句合并两条或多条SQL语句。</p>
+<p><strong>多阶注入：</strong> 由多个HTTP请求响应共同完成的注入。</p>
+<p><strong>二次注入：</strong>   根本问题是，开发者信任数据库中取出的数据是无害的。payload拼接进行SQL注入，在全局过滤后入库时，进行了转义，入库后，转义符会消失，这个时候出库被带入到其他SQL语句就会引入payload导致注入。</p>
+<p><strong>XFF注入：</strong> X- Forwarded-For头带入数据操作时，参数由用户可控，传递中存在SQL注入。</p>
+<p><strong>存储过程：</strong> 存储过程包含参数，在参数传递中存在SQL注入。</p>
 <hr>
 <p>注入技巧使用优先级：</p>
 <p>UNION注入&gt;报错注入&gt;布尔盲注&gt;时间盲注</p>
